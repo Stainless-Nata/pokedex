@@ -12,7 +12,7 @@ import thunkMiddleware from 'redux-thunk';
 const mockStore = configureStore([thunkMiddleware]);
 
 describe('Actions test', () => {
-    it('should create an action to search robots', () => {
+    it('should create an action to search people', () => {
         const text = 'wooo';
         const expectedAction = {
             type: CHANGE_SEARCH_FIELD,
@@ -21,7 +21,7 @@ describe('Actions test', () => {
         expect(actions.setSearchField(text)).toEqual(expectedAction);
     })
 
-    it('handles requesting robots API', () => {
+    it('handles requesting swapi API', () => {
         const store = mockStore();
         store.dispatch(actions.requestRobots());
         const action = store.getActions();
