@@ -1,6 +1,6 @@
 import {
     CHANGE_SEARCH_FIELD,
-    REQUEST_ROBOTS_PENDING,
+    REQUEST_PEOPLE_PENDING,
     REQUEST_ROBOTS_SUCCESS,
     REQUEST_ROBOTS_FAILED
 } from './constants'       //get constants form constants file
@@ -46,7 +46,7 @@ const initialStateRobots = {
 
 export const requestRobots = (state = initialStateRobots, action = {}) => {
     switch (action.type) {
-        case REQUEST_ROBOTS_PENDING:
+        case REQUEST_PEOPLE_PENDING:
             return Object.assign({}, state, { isPending: true })      //everything in the state + new state isPending
         case REQUEST_ROBOTS_SUCCESS:
             return Object.assign({}, state, { robots: action.payload, isPending: false })      //everything in the state + new state isPending & robots

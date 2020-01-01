@@ -1,6 +1,6 @@
 import {
     CHANGE_SEARCH_FIELD,
-    REQUEST_ROBOTS_PENDING,
+    REQUEST_PEOPLE_PENDING,
     REQUEST_ROBOTS_SUCCESS,
     REQUEST_ROBOTS_FAILED
 } from './constants'       //get constants form constants file
@@ -34,9 +34,9 @@ describe('requestRobots', () => {
         expect(reducers.requestRobots(undefined, {})).toEqual(initialStateRobots);
     })
 
-    it('should handle REQUEST_ROBOTS_PENDING', () => {
+    it('should handle REQUEST_PEOPLE_PENDING', () => {
         expect(reducers.requestRobots(initialStateRobots, {
-            type: REQUEST_ROBOTS_PENDING
+            type: REQUEST_PEOPLE_PENDING
         })).toEqual({ robots: [], isPending: true, error: '' });
     })
 

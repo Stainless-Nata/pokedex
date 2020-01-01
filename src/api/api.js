@@ -1,3 +1,6 @@
 export const apiCall = (link) => {
-    return fetch(link).then(response => response.json())
+
+    return fetch(link)
+        .then(data => data.json())
+        .then(data => data.results)
 }

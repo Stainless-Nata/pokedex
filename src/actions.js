@@ -1,6 +1,6 @@
 import {
     CHANGE_SEARCH_FIELD,
-    REQUEST_ROBOTS_PENDING,
+    REQUEST_PEOPLE_PENDING,
     REQUEST_ROBOTS_SUCCESS,
     REQUEST_ROBOTS_FAILED
 } from './constants'       //get constants form constants file
@@ -16,8 +16,8 @@ export const setSearchField = (text) => ({
 //actions can just be objects {}
 
 export const requestRobots = () => (dispatch) => {          //this action will take the dispatch to get access to it - requestRobots returns a function and thunk middleware will hook on it
-    dispatch({ type: REQUEST_ROBOTS_PENDING });             //dispatch the pending action - "will call the action in reducer" - so the PENDING will be called right away
-    apiCall('https://jsonplaceholder.typicode.com/users')         //make this http request & convert it to JSON                    
+    dispatch({ type: REQUEST_PEOPLE_PENDING });             //dispatch the pending action - "will call the action in reducer" - so the PENDING will be called right away
+    apiCall('https://swapi.co/api/people/')         //make this http request & convert it to JSON                    
         .then(data => dispatch({ type: REQUEST_ROBOTS_SUCCESS, payload: data }))        //call the SUCCESS in reducer with the user payload
         .catch(error => dispatch({ type: REQUEST_ROBOTS_FAILED, payload: error }))
 }
