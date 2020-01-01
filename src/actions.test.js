@@ -2,8 +2,8 @@ import * as actions from './actions';
 import {
     CHANGE_SEARCH_FIELD,
     REQUEST_PEOPLE_PENDING,
-    REQUEST_ROBOTS_SUCCESS,
-    REQUEST_ROBOTS_FAILED
+    REQUEST_PEOPLE_SUCCESS,
+    REQUEST_PEOPLE_FAILED
 } from './constants'       //get constants form constants file
 
 import configureStore from 'redux-mock-store';

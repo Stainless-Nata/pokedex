@@ -1,8 +1,8 @@
 import {
     CHANGE_SEARCH_FIELD,
     REQUEST_PEOPLE_PENDING,
-    REQUEST_ROBOTS_SUCCESS,
-    REQUEST_ROBOTS_FAILED
+    REQUEST_PEOPLE_SUCCESS,
+    REQUEST_PEOPLE_FAILED
 } from './constants'       //get constants form constants file
 
 
@@ -40,9 +40,9 @@ describe('requestRobots', () => {
         })).toEqual({ robots: [], isPending: true, error: '' });
     })
 
-    it('should handle REQUEST_ROBOTS_SUCCESS', () => {
+    it('should handle REQUEST_PEOPLE_SUCCESS', () => {
         expect(reducers.requestRobots(initialStateRobots, {
-            type: REQUEST_ROBOTS_SUCCESS,
+            type: REQUEST_PEOPLE_SUCCESS,
             payload: [{
                 id: '123',
                 name: 'test',
@@ -57,9 +57,9 @@ describe('requestRobots', () => {
         });
     })
 
-    it('should handle REQUEST_ROBOTS_FAILED', () => {
+    it('should handle REQUEST_PEOPLE_FAILED', () => {
         expect(reducers.requestRobots(initialStateRobots, {
-            type: REQUEST_ROBOTS_FAILED,
+            type: REQUEST_PEOPLE_FAILED,
             payload: 'NOOO!'
         })).toEqual({
             robots: [], isPending: false, error: 'NOOO!'
