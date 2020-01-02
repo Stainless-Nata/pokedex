@@ -15,7 +15,7 @@ export const setSearchField = (text) => ({
 
 //actions can just be objects {}
 
-export const requestRobots = () => (dispatch) => {          //this action will take the dispatch to get access to it - requestRobots returns a function and thunk middleware will hook on it
+export const requestPeople = () => (dispatch) => {          //this action will take the dispatch to get access to it - requestPeople returns a function and thunk middleware will hook on it
     dispatch({ type: REQUEST_PEOPLE_PENDING });             //dispatch the pending action - "will call the action in reducer" - so the PENDING will be called right away
     apiCall('https://swapi.co/api/people/')         //make this http request & convert it to JSON                    
         .then(data => dispatch({ type: REQUEST_PEOPLE_SUCCESS, payload: data }))        //call the SUCCESS in reducer with the user payload

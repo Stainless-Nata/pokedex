@@ -2,7 +2,7 @@ import { shallow, mount, render } from 'enzyme';
 import React from 'react';          //need to import react to use JSX in the shallow
 import CardList from './CardList';
 
-const robotMock = [{
+const peopleMock = [{
     id: 1,
     email: 'emailadress',
     name: 'hello'
@@ -10,12 +10,12 @@ const robotMock = [{
 
 
 it('expect to render a CardList', () => {
-    expect(shallow(<CardList robots={robotMock} />).length).toEqual(1);     //shallow will enable us to render a card and with expect we can test if the Card is rendered
+    expect(shallow(<CardList people={peopleMock} />).length).toEqual(1);     //shallow will enable us to render a card and with expect we can test if the Card is rendered
 });
 
 
 it('expect to render a CardList, compared against a snapshot', () => {
-    expect(render(<CardList robots={robotMock} />)).toMatchSnapshot();     //at the first time running a snapshot will be saved in the snapshots folder - delete it if you want to create a new snapshot you want to test against it
+    expect(render(<CardList people={peopleMock} />)).toMatchSnapshot();     //at the first time running a snapshot will be saved in the snapshots folder - delete it if you want to create a new snapshot you want to test against it
 });                                                 //or press w in the terminal to show more and press u to update the failing snapshots
 
 

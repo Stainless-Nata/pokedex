@@ -11,11 +11,11 @@ import './MainPage.css'; //to import the appropriate css file for this component
 class MainPage extends Component {   //class App will use the component lib / Component expects that there is a render function in this class
 
     componentDidMount() {
-        this.props.onRequestRobots();
+        this.props.onRequestPeople();
     }
-    filterRobots = () => {
-        return this.props.robots.filter(robot => {      //filter the robots and return them to filteredrobots
-            return robot.name.toLowerCase().includes(this.props.searchField.toLowerCase());
+    filterPeople = () => {
+        return this.props.people.filter(person => {      //filter the people and return them to filteredpeople
+            return person.name.toLowerCase().includes(this.props.searchField.toLowerCase());
         });
     }
 
@@ -30,7 +30,7 @@ class MainPage extends Component {   //class App will use the component lib / Co
                 <SearchBox searchChange={onSearchChange} />
                 <Scroll>
                     <ErrorBoundry>
-                        <CardList robots={this.filterRobots()} />
+                        <CardList people={this.filterPeople()} />
                     </ErrorBoundry>
                 </Scroll>
             </div>

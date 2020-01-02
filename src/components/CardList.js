@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import Card from './Card';
 
-const CardList = ({ robots }) => {          //using robots array as props
+const CardList = ({ people }) => {          //using people array as props
     /*
     if (true) {
         throw new Error('noooo!');          this would throw an error to test the error boundry written in ErrorBoundry.js
@@ -9,13 +9,14 @@ const CardList = ({ robots }) => {          //using robots array as props
     return (
         <Fragment>  {/* this fragment is to wrap all returned cards, but will avoid a additional wrap div */}
             {   //wrap in curly brackets cause it's javascript
-                robots.map((user, i) => {           //for each user in robots array
+                people.map((person, i) => {           //for each user in people array
                     return (                        //return of the map function 
                         <Card
                             key={i}
-                            id={robots[i].id}
-                            name={robots[i].name}
-                            email={robots[i].email}
+                            id={i}
+                            name={people[i].name}
+                            gender={people[i].gender}
+                            height={people[i].height}
                         />);
                 })
             }

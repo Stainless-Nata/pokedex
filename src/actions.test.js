@@ -23,7 +23,7 @@ describe('Actions test', () => {
 
     it('handles requesting swapi API', () => {
         const store = mockStore();
-        store.dispatch(actions.requestRobots());
+        store.dispatch(actions.requestPeople());
         const action = store.getActions();
 
         const expectedAction = {

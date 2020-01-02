@@ -8,7 +8,7 @@ import {
 
 
 /**
- * SEARCHROBOTS REDUCER
+ * SEARCHPEOPLE REDUCER
  */
 
 
@@ -17,9 +17,9 @@ const initialStateSearch = {
     searchField: ''         //initial object in the redux store
 }
 
-//searchRobots function -> use default params (initialState, empty action object)
-//reducers get a input of a state and action -> if this one get something we care about (like searching robots), we will do something
-export const searchRobots = (state = initialStateSearch, action = {}) => {
+//searchPeople function -> use default params (initialState, empty action object)
+//reducers get a input of a state and action -> if this one get something we care about (like searching people), we will do something
+export const searchPeople = (state = initialStateSearch, action = {}) => {
     switch (action.type) {
         case CHANGE_SEARCH_FIELD:       //if a CHANGE_SEARCH_FIELD action comes in, we will do something
             return Object.assign({}, state, { searchField: action.payload })
@@ -33,23 +33,23 @@ export const searchRobots = (state = initialStateSearch, action = {}) => {
 }
 
 /**
- * REQUESTING ROBOTS REDUCER
+ * REQUESTING PEOPLE REDUCER
  */
 
 
 
-const initialStateRobots = {
+const initialStatePeople = {
     isPending: false,
-    robots: [],
+    people: [],
     error: ''
 }
 
-export const requestRobots = (state = initialStateRobots, action = {}) => {
+export const requestPeople = (state = initialStatePeople, action = {}) => {
     switch (action.type) {
         case REQUEST_PEOPLE_PENDING:
             return Object.assign({}, state, { isPending: true })      //everything in the state + new state isPending
         case REQUEST_PEOPLE_SUCCESS:
-            return Object.assign({}, state, { robots: action.payload, isPending: false })      //everything in the state + new state isPending & robots
+            return Object.assign({}, state, { people: action.payload, isPending: false })      //everything in the state + new state isPending & people
         case REQUEST_PEOPLE_FAILED:
             return Object.assign({}, state, { isPending: false, error: action.payload })      //everything in the state + errorstate
         default:

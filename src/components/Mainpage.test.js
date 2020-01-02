@@ -6,8 +6,8 @@ let wrapper, wrapper2, wrapper3, wrapper4;
 
 beforeEach(() => {
     const mockProps = {
-        onRequestRobots: jest.fn(),
-        robots: [],
+        onRequestPeople: jest.fn(),
+        people: [],
         searchField: '',
         isPending: false
     }
@@ -18,12 +18,12 @@ it('renders the mainpage without crashing', () => {
     expect(wrapper).toMatchSnapshot();
 });
 
-it('filters robots correctly', () => {
-    expect(wrapper.instance().filterRobots()).toEqual([]);          //check if filtering of a empty robots array with a empty searchfield will return an empty array
+it('filters people correctly', () => {
+    expect(wrapper.instance().filterPeople()).toEqual([]);          //check if filtering of a empty people array with a empty searchfield will return an empty array
 
     const mockProps2 = {
-        onRequestRobots: jest.fn(),
-        robots: [{
+        onRequestPeople: jest.fn(),
+        people: [{
             id: 3,
             name: 'John',
             email: 'john@gmail.com'
@@ -32,17 +32,17 @@ it('filters robots correctly', () => {
         isPending: false
     }
     wrapper2 = shallow(<MainPage {...mockProps2} />);
-    expect(wrapper2.instance().filterRobots()).toEqual([{                   //check if filtering the robots array will return the array we searched for
+    expect(wrapper2.instance().filterPeople()).toEqual([{                   //check if filtering the people array will return the array we searched for
         id: 3,
         name: 'John',
         email: 'john@gmail.com'
     }]);
 })
 
-it('filters robots correctly 2', () => {
+it('filters people correctly 2', () => {
     const mockProps3 = {
-        onRequestRobots: jest.fn(),
-        robots: [{
+        onRequestPeople: jest.fn(),
+        people: [{
             id: 3,
             name: 'John',
             email: 'john@gmail.com'
@@ -50,15 +50,15 @@ it('filters robots correctly 2', () => {
         searchField: 'a',
         isPending: false
     }
-    const filteredRobots = [];
+    const filteredPeople = [];
     wrapper3 = shallow(<MainPage {...mockProps3} />);
-    expect(wrapper3.instance().filterRobots()).toEqual(filteredRobots);
+    expect(wrapper3.instance().filterPeople()).toEqual(filteredPeople);
 })
 
 it('returns isPending correctly', () => {
     const mockProps4 = {
-        onRequestRobots: jest.fn(),
-        robots: [],
+        onRequestPeople: jest.fn(),
+        people: [],
         searchField: '',
         isPending: true
     }

@@ -2,13 +2,13 @@ import React, { Component } from 'react';   //destructuring (instead of React.Co
 import { connect } from 'react-redux';
 import MainPage from '../components/MainPage/MainPage'
 
-import { setSearchField, requestRobots } from '../actions'
+import { setSearchField, requestPeople } from '../actions'
 
 const mapStateToProps = state => {
     return {
-        searchField: state.searchRobots.searchField,            //prop searchfield will get the state of the searchRobots.searchField
-        isPending: state.requestRobots.isPending,               // -''-
-        robots: state.requestRobots.robots                      // -''-
+        searchField: state.searchPeople.searchField,            //prop searchfield will get the state of the searchPeople.searchField
+        isPending: state.requestPeople.isPending,               // -''-
+        people: state.requestPeople.people                      // -''-
     }
 }
 
@@ -18,7 +18,7 @@ const mapDispatchToProps = (dispatch) => {
         //there the dispatch will get called which will call the setSearchField action in redux and 
         //it will hand over the event.target.value (which is the stuff typed in the search box)
         onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
-        onRequestRobots: () => dispatch(requestRobots())                    //requestRobots needs the dispatch function
+        onRequestPeople: () => dispatch(requestPeople())                    //requestPeople needs the dispatch function
     }
 }
 

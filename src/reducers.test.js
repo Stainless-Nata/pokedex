@@ -8,40 +8,40 @@ import {
 
 import * as reducers from './reducers';     //import all reducers in the reducers file
 
-describe('searchRobots', () => {
+describe('searchPeople', () => {
     const initialStateSearch = {
         searchField: ''
     }
     it('should return the initial state', () => {
-        expect(reducers.searchRobots(undefined, {})).toEqual({ searchField: '' });
+        expect(reducers.searchPeople(undefined, {})).toEqual({ searchField: '' });
     })
 
     it('should handle CHANGE_SEARCHFIELD', () => {
-        expect(reducers.searchRobots(initialStateSearch, {
+        expect(reducers.searchPeople(initialStateSearch, {
             type: CHANGE_SEARCH_FIELD,
             payload: 'abc'
         })).toEqual({ searchField: 'abc' });
     })
 })
 
-describe('requestRobots', () => {
-    const initialStateRobots = {
-        robots: [],
+describe('requestPeople', () => {
+    const initialStatePeople = {
+        people: [],
         isPending: false,
         error: ''
     }
     it('should return the initial state', () => {
-        expect(reducers.requestRobots(undefined, {})).toEqual(initialStateRobots);
+        expect(reducers.requestPeople(undefined, {})).toEqual(initialStatePeople);
     })
 
     it('should handle REQUEST_PEOPLE_PENDING', () => {
-        expect(reducers.requestRobots(initialStateRobots, {
+        expect(reducers.requestPeople(initialStatePeople, {
             type: REQUEST_PEOPLE_PENDING
-        })).toEqual({ robots: [], isPending: true, error: '' });
+        })).toEqual({ people: [], isPending: true, error: '' });
     })
 
     it('should handle REQUEST_PEOPLE_SUCCESS', () => {
-        expect(reducers.requestRobots(initialStateRobots, {
+        expect(reducers.requestPeople(initialStatePeople, {
             type: REQUEST_PEOPLE_SUCCESS,
             payload: [{
                 id: '123',
@@ -49,7 +49,7 @@ describe('requestRobots', () => {
                 email: 'test@gmail.com'
             }]
         })).toEqual({
-            robots: [{
+            people: [{
                 id: '123',
                 name: 'test',
                 email: 'test@gmail.com'
@@ -58,11 +58,11 @@ describe('requestRobots', () => {
     })
 
     it('should handle REQUEST_PEOPLE_FAILED', () => {
-        expect(reducers.requestRobots(initialStateRobots, {
+        expect(reducers.requestPeople(initialStatePeople, {
             type: REQUEST_PEOPLE_FAILED,
             payload: 'NOOO!'
         })).toEqual({
-            robots: [], isPending: false, error: 'NOOO!'
+            people: [], isPending: false, error: 'NOOO!'
         });
     })
 })

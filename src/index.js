@@ -10,10 +10,10 @@ import './index.css';
 import App from './containers/App';
 import * as serviceWorker from './serviceWorker';
 import 'tachyons';      //to use tachyons lib
-import { searchRobots, requestRobots } from './reducers';
+import { searchPeople, requestPeople } from './reducers';
 
 const logger = createLogger();
-const rootReducer = combineReducers({ searchRobots, requestRobots });       //combine the reducers from the recducers file into one root reducer
+const rootReducer = combineReducers({ searchPeople, requestPeople });       //combine the reducers from the reducers file into one root reducer
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunkMiddleware, logger)));
 //to create the store with the root reducer and apply the thunkMiddleware and the logger to the store
 
