@@ -7,7 +7,7 @@ import { setSearchField, requestPeople } from '../actions'
 const mapStateToProps = state => {
     return {
         searchField: state.searchPeople.searchField,            //prop searchfield will get the state of the searchPeople.searchField
-        isPending: state.requestPeople.isPending,               // -''-
+        firstPeoplePending: state.requestPeople.firstPeoplePending,               // -''-
         people: state.requestPeople.people                      // -''-
     }
 }

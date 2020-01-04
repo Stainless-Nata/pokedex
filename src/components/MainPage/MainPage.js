@@ -19,10 +19,11 @@ class MainPage extends Component {   //class App will use the component lib / Co
         });
     }
 
-    render() {
-        const { onSearchChange, isPending } = this.props;
 
-        return isPending ?  //return html back depending on the isPending flag
+    render() {
+        const { onSearchChange, firstPeoplePending } = this.props;
+
+        return firstPeoplePending ?  //return html back depending on the isPending flag
             <h1 className='tc'>Loading</h1>
             :
             <div className='tc' >

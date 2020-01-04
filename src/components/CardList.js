@@ -14,9 +14,10 @@ const CardList = ({ people }) => {          //using people array as props
                         <Card
                             key={i}
                             id={i}
-                            name={people[i].name}
-                            gender={people[i].gender}
-                            height={people[i].height}
+                            name={person.name}
+                            gender={person.gender}
+                            height={person.height}
+                            species={person.species}
                         />);
                 })
             }

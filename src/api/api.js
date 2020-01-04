@@ -1,16 +1,16 @@
-export const apiCall = (link) => {
-    let people = [];
-    people = fetch(link)
-        .then(data => data.json())
-        .then(data => data.results)
-        //.then(data => getMorePeople(data.results, data.next))
-        .then(people => getSpecies(people))
-    return people;
+export const getFirstPeople = async (link) => {
+    let nextLink = "";
+    let data = await fetch(link);
+    let data_json = await data.json();
+    let people = data_json.results;
+    nextLink = await data_json.next;
+    return { people, nextLink };
 }
 
-async function getMorePeople(people, link) {
+export const getMorePeople = async (link) => {
     let tempPeople = [];
     let nextLink = undefined;
+
     for (let i = 0; i < 6; i++) {
         link = (nextLink === undefined) ? link : nextLink;
         let data = await fetch(link);
@@ -24,12 +24,13 @@ async function getMorePeople(people, link) {
 }
 
 
-function getSpecies(people) {
-    people.map((person, i) => {
-        fetch(person.species[0])
-            .then(data => data.json())
-            .then(data => { people[i].species = data.name })
-        return person;
-    })
-    return people;
+export const replaceSpeciesName = async (people) => {
+    return await Promise.all(
+        people.map(async (person, i) => {
+            let data = await fetch(person.species[0]);
+            let data_json = await data.json();
+            person.species = await data_json.name;
+            return person;
+        })
+    );
 }
