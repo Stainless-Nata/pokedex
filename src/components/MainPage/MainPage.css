@@ -1,13 +1,12 @@
 @font-face {
     font-display: swap;
-    font-family: 'SEGA LOGO FONT';
+    font-family: 'STAR JEDI';
     font-style: normal;
     font-weight: normal;
-    src: local('SEGA LOGO FONT'), url('../../fonts/SEGA.woff') format('woff');
+    src: local('STAR JEDI'), url('../../fonts/Starjedi.ttf') format('woff');
 }
 
 h1 {
-    font-family: 'SEGA LOGO FONT';
-    font-weight: 200;
+    font-family: 'STAR JEDI';
     color: white;
 }

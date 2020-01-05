@@ -48,6 +48,10 @@ const nameImageSwitch = (name, species) => {
             switch (species) {
                 case 'Human':
                     return <img alt={`${name}`} src={`images/cards/red-five.png`} />;
+                case 'Mirialan':
+                    return <img alt={`${name}`} src={`images/cards/mirialan.png`} />;
+                case "Twi'lek":
+                    return <img alt={`${name}`} src={`images/cards/twilek.png`} />;
                 default:
                     return <img alt={`${name}`} src={`images/cards/nothing_declared.png`} />;
             }
@@ -56,21 +60,21 @@ const nameImageSwitch = (name, species) => {
 }
 
 
-const Card = ({ name, gender, height, species, id }) => {         //receiving props and destructuring them in the brackets
+const Card = ({ name, height, mass, birth_year, species, id }) => {         //receiving props and destructuring them in the brackets
 
     return (
         <Fragment>
             <div className='card tc dib br3 pa3 ma2 grow bw2 shadow-5'>
                 {
-                    Array.isArray(species) ?
+                    (Array.isArray(species) && species.length > 0) ?
                         <img alt={`loading_image`} src={`images/cards/loading_image.png`} />
                         : nameImageSwitch(name, species)
                 }
                 <div>
                     <h2>{name}</h2>
-                    <p>{gender}</p>
-                    <p>{height}</p>
-                    <p>{species}</p>
+                    <p>Height: {height} {height === "unknown" ? '' : 'cm'}</p>
+                    <p>Mass: {mass} {mass === "unknown" ? '' : 'kg'}</p>
+                    <p>Birth Year: {birth_year.replace("BBY", " BBY")}</p>
                 </div>
             </div>
         </Fragment>

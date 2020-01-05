@@ -1,0 +1,19 @@
+.scrollContainer {
+    overflow-y: scroll;
+    height: 75vh;
+}
+.scrollContainer::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+   
+  /* Handle */
+  .scrollContainer::-webkit-scrollbar-thumb {
+    background: #334053; 
+    border-radius: 16px;
+  }
+  
+  /* Handle on hover */
+  .scrollContainer::-webkit-scrollbar-thumb:hover {
+    background: white; 
+  }

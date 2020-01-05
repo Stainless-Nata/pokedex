@@ -15,8 +15,9 @@ const CardList = ({ people }) => {          //using people array as props
                             key={i}
                             id={i}
                             name={person.name}
-                            gender={person.gender}
                             height={person.height}
+                            mass={person.mass}
+                            birth_year={person.birth_year}
                             species={person.species}
                         />);
                 })

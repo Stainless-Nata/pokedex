@@ -1,13 +1,15 @@
 import React from 'react';
 
+import './SearchBox.css';
+
 const SearchBox = ({ searchChange }) => {
     return (
-        <div className="pa2">
+        <div className="pa1">
             <input
-                aria-label='Search People'
-                className="pa3 ba b--green bg-lightest-blue"
+                aria-label='Search Characters'
+                className="pa3 searchBox"
                 type='search'
-                placeholder='search people'
+                placeholder='Search characters'
                 onChange={searchChange}
             />
         </div>

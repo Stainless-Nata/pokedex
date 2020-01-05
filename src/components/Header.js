@@ -5,7 +5,7 @@ class Header extends Component {
         return false;                                   //never update this component! 
     }
     render() {
-        return <h1 className='f1'>Star Wars Figures</h1>;
+        return <h1 className="f1">Star Wars Characters</h1>;
     }
 }
 
