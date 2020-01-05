@@ -5,6 +5,7 @@ import {
     REQUEST_FIRST_IMAGES_SUCCESS,
     REQUEST_MORE_PEOPLE_PENDING,
     REQUEST_MORE_PEOPLE_SUCCESS,
+    REQUEST_MORE_IMAGES_SUCCESS,
     REQUEST_FIRST_PEOPLE_FAILED
 } from './constants'       //get constants form constants file
 
@@ -59,7 +60,9 @@ export const requestPeople = (state = initialStatePeople, action = {}) => {
         case REQUEST_MORE_PEOPLE_PENDING:
             return Object.assign({}, state, { morePeoplePending: true })      //everything in the state + new state isPending
         case REQUEST_MORE_PEOPLE_SUCCESS:
-            return Object.assign({}, state, { people: action.payload, morePeoplePending: false })      //everything in the state + new state isPending & people
+            return Object.assign({}, state, { people: state.people.concat(action.payload), morePeoplePending: false })      //everything in the state + new state isPending & people
+        case REQUEST_MORE_IMAGES_SUCCESS:
+            return Object.assign({}, state, { people: state.people.concat(action.payload) })      //everything in the state + new state isPending & people
         case REQUEST_FIRST_PEOPLE_FAILED:
             return Object.assign({}, state, { firstPeoplePending: false, error: action.payload })      //everything in the state + errorstate
         default:

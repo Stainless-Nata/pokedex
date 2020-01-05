@@ -5,6 +5,7 @@ import {
     REQUEST_FIRST_IMAGES_SUCCESS,
     REQUEST_MORE_PEOPLE_PENDING,
     REQUEST_MORE_PEOPLE_SUCCESS,
+    REQUEST_MORE_IMAGES_SUCCESS,
     REQUEST_FIRST_PEOPLE_FAILED
 } from './constants'       //get constants form constants file
 import { getFirstPeople, getMorePeople, replaceSpeciesName } from './api/api';
@@ -30,11 +31,10 @@ export const requestPeople = () => (dispatch) => {          //this action will t
                     getMorePeople(data.next)
                         .then(people => dispatch({ type: REQUEST_MORE_PEOPLE_SUCCESS, payload: people }))
                         .then(people => {
-                            console.log(people.payload);
-                            /*replaceSpeciesName(people.payload)
+                            replaceSpeciesName(people.payload)
                                 .then(people => {
-                                    dispatch({ type: REQUEST_FIRST_IMAGES_SUCCESS, payload: people });
-                                })*/
+                                    dispatch({ type: REQUEST_MORE_IMAGES_SUCCESS, payload: people });
+                                })
                         })
                 })
         })

@@ -27,10 +27,16 @@ export const getMorePeople = async (link) => {
 export const replaceSpeciesName = async (people) => {
     return await Promise.all(
         people.map(async (person, i) => {
-            let data = await fetch(person.species[0]);
-            let data_json = await data.json();
-            person.species = await data_json.name;
-            return person;
+            if (Array.isArray(person.species) && person.species.length) {
+
+                let data = await fetch(person.species[0]);
+                let data_json = await data.json();
+                person.species = await data_json.name;
+                return person;
+            }
+            else {
+                return person;
+            }
         })
     );
 }
