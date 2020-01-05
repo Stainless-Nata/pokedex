@@ -62,7 +62,7 @@ export const requestPeople = (state = initialStatePeople, action = {}) => {
         case REQUEST_MORE_PEOPLE_SUCCESS:
             return Object.assign({}, state, { people: state.people.concat(action.payload), morePeoplePending: false })      //everything in the state + new state isPending & people
         case REQUEST_MORE_IMAGES_SUCCESS:
-            return Object.assign({}, state, { people: state.people.concat(action.payload) })      //everything in the state + new state isPending & people
+            return Object.assign({}, state, { people: [...state.people.slice(0, action.payload.position), ...action.payload.people] })      //everything in the state + new state isPending & people
         case REQUEST_FIRST_PEOPLE_FAILED:
             return Object.assign({}, state, { firstPeoplePending: false, error: action.payload })      //everything in the state + errorstate
         default:
