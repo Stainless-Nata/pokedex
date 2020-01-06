@@ -20,7 +20,6 @@ class MainPage extends Component {   //class App will use the component lib / Co
         });
     }
 
-
     render() {
         const { onSearchChange, firstPeoplePending, morePeoplePending } = this.props;
 
