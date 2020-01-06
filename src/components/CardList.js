@@ -1,7 +1,10 @@
 import React, { Fragment } from 'react';
 import Card from './Card';
+import LoadingSpinner from './Layout/LoadingSpinner/LoadingSpinner'
 
-const CardList = ({ people }) => {          //using people array as props
+import './CardList.css';
+
+const CardList = ({ people, morePeoplePending }) => {          //using people array as props
     /*
     if (true) {
         throw new Error('noooo!');          this would throw an error to test the error boundry written in ErrorBoundry.js
@@ -21,6 +24,10 @@ const CardList = ({ people }) => {          //using people array as props
                             species={person.species}
                         />);
                 })
+            }
+            {
+                morePeoplePending &&
+                <LoadingSpinner />
             }
         </Fragment>
     );

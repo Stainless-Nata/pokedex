@@ -8,6 +8,7 @@ const mapStateToProps = state => {
     return {
         searchField: state.searchPeople.searchField,            //prop searchfield will get the state of the searchPeople.searchField
         firstPeoplePending: state.requestPeople.firstPeoplePending,               // -''-
+        morePeoplePending: state.requestPeople.morePeoplePending,
         people: state.requestPeople.people                      // -''-
     }
 }

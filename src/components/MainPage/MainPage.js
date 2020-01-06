@@ -6,6 +6,7 @@ import Scroll from '../Scroll';
 import ErrorBoundry from '../ErrorBoundry';
 import Header from '../Header';
 import './MainPage.css'; //to import the appropriate css file for this component
+import LoadingSpinner from '../Layout/LoadingSpinner/LoadingSpinner';
 
 
 class MainPage extends Component {   //class App will use the component lib / Component expects that there is a render function in this class
@@ -21,20 +22,23 @@ class MainPage extends Component {   //class App will use the component lib / Co
 
 
     render() {
-        const { onSearchChange, firstPeoplePending } = this.props;
+        const { onSearchChange, firstPeoplePending, morePeoplePending } = this.props;
 
-        return firstPeoplePending ?  //return html back depending on the isPending flag
-            <h1 className='tc'>Loading</h1>
-            :
+        return (
             <div className='tc' >
                 <Header />
                 <SearchBox searchChange={onSearchChange} />
                 <Scroll>
                     <ErrorBoundry>
-                        <CardList people={this.filterPeople()} />
+                        {firstPeoplePending ?  //return html back depending on the isPending flag
+                            <LoadingSpinner />
+                            :
+                            <CardList people={this.filterPeople()} morePeoplePending={morePeoplePending} />
+                        }
                     </ErrorBoundry>
                 </Scroll>
             </div>
+        )
     }
 }
 export default MainPage;
