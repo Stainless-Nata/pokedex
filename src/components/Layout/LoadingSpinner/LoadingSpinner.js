@@ -7,7 +7,7 @@ const LoadingSpinner = () => {
     return (
         <div className="loadingContainer">
             <div className="circleLoading"></div>
-            <p className="morePeopleLoading">fetching from swapi.co</p>
+            <span className="morePeopleLoading">fetching from <a href="https://swapi.co" target="_blank">swapi.co</a></span>
         </div>
     );
 }
