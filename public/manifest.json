@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Star Wars Characters",
+  "name": "Star Wars Characters App - visualizing Star Wars characters, fetched from swapi.co",
   "icons": [
     {
       "src": "favicon.ico",
