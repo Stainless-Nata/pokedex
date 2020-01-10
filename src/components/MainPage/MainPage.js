@@ -25,17 +25,19 @@ class MainPage extends Component {   //class App will use the component lib / Co
 
         return (
             <div className='tc' >
-                <Header />
-                <SearchBox searchChange={onSearchChange} />
-                <Scroll>
-                    <ErrorBoundry>
-                        {firstPeoplePending ?  //return html back depending on the isPending flag
-                            <LoadingSpinner />
-                            :
-                            <CardList people={this.filterPeople()} morePeoplePending={morePeoplePending} />
-                        }
-                    </ErrorBoundry>
-                </Scroll>
+                <div className='wrapper'>
+                    <Header />
+                    <SearchBox searchChange={onSearchChange} />
+                    <Scroll>
+                        <ErrorBoundry>
+                            {firstPeoplePending ?  //return html back depending on the isPending flag
+                                <LoadingSpinner />
+                                :
+                                <CardList people={this.filterPeople()} morePeoplePending={morePeoplePending} />
+                            }
+                        </ErrorBoundry>
+                    </Scroll>
+                </div>
             </div>
         )
     }

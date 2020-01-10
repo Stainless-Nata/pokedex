@@ -10,3 +10,10 @@ h1 {
     font-family: 'STAR JEDI';
     color: white;
 }
+
+.wrapper {
+    height: 100%;
+    width: 80%;
+    position: absolute;
+    left: 10%;
+}
