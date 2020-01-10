@@ -1,6 +1,6 @@
 import React, { Component } from 'react';   //destructuring (instead of React.Component)
 import { connect } from 'react-redux';
-import MainPage from '../components/MainPage/MainPage'
+import MainPage from './MainPage/MainPage'
 
 import { setSearchField, requestPeople } from '../actions'
 

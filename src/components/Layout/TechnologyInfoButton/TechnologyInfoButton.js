@@ -4,7 +4,7 @@ import './TechnologyInfoButton.css';
 
 
 const TechnologyInfoButton = () => {
-    return <div className="TechnologyInfoButton"> TechnologyInfoButton ill displayed be here </div>
+    return <div className="TechnologyInfoButtonContainer"> <img className="TechnologyInfoButton" src="/images/code.png"></img></div>
 }
 
 export default TechnologyInfoButton;

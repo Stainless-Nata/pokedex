@@ -1,13 +1,20 @@
-import React, { Component } from 'react';   //destructuring (instead of React.Component)
+import React, { Component, Suspense, lazy } from 'react';   //destructuring (instead of React.Component)
 
-import CardList from '../CardList';
-import SearchBox from '../SearchBox';
-import Scroll from '../Scroll';
-import ErrorBoundry from '../ErrorBoundry';
-import Header from '../Header';
+import CardList from '../../components/CardList';
+import SearchBox from '../../components/SearchBox';
+import Scroll from '../../components/Scroll';
+import ErrorBoundry from '../../components/ErrorBoundry';
+import Header from '../../components/Header';
+import LoadingSpinner from '../../components/Layout/LoadingSpinner/LoadingSpinner';
+import TechnologyInfoButton from '../../components/Layout/TechnologyInfoButton/TechnologyInfoButton';
+
+
 import './MainPage.css'; //to import the appropriate css file for this component
-import LoadingSpinner from '../Layout/LoadingSpinner/LoadingSpinner';
+import ImprintButton from '../../components/Layout/ImprintButton/ImprintButton';
 
+
+const AsyncPageTechnologyInfo = lazy(() => import('../../components/Pages/TechnologyInfo/TechnologyInfo'));
+const AsyncPageImprint = lazy(() => import('../../components/Pages/Imprint/Imprint'));
 
 class MainPage extends Component {   //class App will use the component lib / Component expects that there is a render function in this class
 
@@ -38,6 +45,8 @@ class MainPage extends Component {   //class App will use the component lib / Co
                         </ErrorBoundry>
                     </Scroll>
                 </div>
+                <TechnologyInfoButton />
+                <ImprintButton />
             </div>
         )
     }

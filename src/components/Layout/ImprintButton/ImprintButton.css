@@ -1,14 +1,14 @@
-.TechnologyInfoButtonContainer {
+.ImprintButtonContainer {
     position: absolute;
-    right: 90px;
+    right: 25px;
     bottom: 20px;
 }
 
-.TechnologyInfoButton {
+.ImprintButton {
     height: 30px;
 }
 
-.TechnologyInfoButton:hover {
+.ImprintButton:hover {
     height: 34px;
     margin-bottom: -2px;
     margin-right: -2px;
