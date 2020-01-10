@@ -1,0 +1,30 @@
+.TechnologyInfo {
+    background-color: #334053;
+    color: white;
+    display: block;
+    position: relative;
+    left: 25%;
+    width: 50%;
+    height: auto;
+}
+
+.TechnologyInfo p {
+    font-size: 18px;
+}
+
+.TechnologyInfo a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.TechnologyInfo a:hover {
+    cursor: pointer;
+    color: white;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
