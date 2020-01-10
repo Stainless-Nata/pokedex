@@ -27,7 +27,7 @@ const CardList = ({ people, morePeoplePending }) => {          //using people ar
             }
             {
                 morePeoplePending &&
-                <LoadingSpinner />
+                <LoadingSpinner swapiLabel={true} />
             }
         </Fragment>
     );

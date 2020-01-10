@@ -1,4 +1,5 @@
 import {
+    INITIAL_ROUTE,
     CHANGE_SEARCH_FIELD,
     REQUEST_FIRST_PEOPLE_PENDING,
     REQUEST_FIRST_PEOPLE_SUCCESS,
@@ -6,8 +7,40 @@ import {
     REQUEST_MORE_PEOPLE_PENDING,
     REQUEST_MORE_PEOPLE_SUCCESS,
     REQUEST_MORE_IMAGES_SUCCESS,
-    REQUEST_FIRST_PEOPLE_FAILED
+    REQUEST_FIRST_PEOPLE_FAILED,
+    CHANGE_ROUTE
 } from './constants'       //get constants form constants file
+
+
+
+
+
+
+/**
+ * CHANGEROUTE REDUCER
+ */
+
+
+//define the initialstate in the reducer 
+const initialRoute = {
+    route: INITIAL_ROUTE         //initial object in the redux store
+}
+
+//searchPeople function -> use default params (initialState, empty action object)
+//reducers get a input of a state and action -> if this one get something we care about (like searching people), we will do something
+export const changeRoute = (state = initialRoute, action = {}) => {
+    switch (action.type) {
+        case CHANGE_ROUTE:       //if a CHANGE_SEARCH_FIELD action comes in, we will do something
+            return Object.assign({}, state, { route: action.payload })
+        //1st param= new object
+        //2nd param= state we receiving
+        //3rd param=is what we want to change in the state
+        //so what we return is a new object with everything in the state + new searchField -> 2nd principle: State is read only
+        default:
+            return state    //if a other action comes in, return the state as it was passed over and do not change anything
+    }
+}
+
 
 
 

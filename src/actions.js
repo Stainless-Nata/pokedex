@@ -6,9 +6,21 @@ import {
     REQUEST_MORE_PEOPLE_PENDING,
     REQUEST_MORE_PEOPLE_SUCCESS,
     REQUEST_MORE_IMAGES_SUCCESS,
-    REQUEST_FIRST_PEOPLE_FAILED
+    REQUEST_FIRST_PEOPLE_FAILED,
+    CHANGE_ROUTE
 } from './constants'       //get constants form constants file
+
+
 import { getFirstPeople, getMorePeople, replaceSpeciesName } from './api/api';
+
+//first action in here - this action will receive input of text which the user types - it will return a object with type and payload
+//this action will send the object on to the reducer
+export const setRoute = (route) => ({
+    type: CHANGE_ROUTE,                  //constants are usually capitalized - we use a variable here to avoid misspelling 
+    payload: route
+})
+
+
 
 //first action in here - this action will receive input of text which the user types - it will return a object with type and payload
 //this action will send the object on to the reducer

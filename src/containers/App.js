@@ -2,10 +2,11 @@ import React, { Component } from 'react';   //destructuring (instead of React.Co
 import { connect } from 'react-redux';
 import MainPage from './MainPage/MainPage'
 
-import { setSearchField, requestPeople } from '../actions'
+import { setRoute, setSearchField, requestPeople } from '../actions'
 
 const mapStateToProps = state => {
     return {
+        route: state.changeRoute.route,
         searchField: state.searchPeople.searchField,            //prop searchfield will get the state of the searchPeople.searchField
         firstPeoplePending: state.requestPeople.firstPeoplePending,               // -''-
         morePeoplePending: state.requestPeople.morePeoplePending,
@@ -18,6 +19,7 @@ const mapDispatchToProps = (dispatch) => {
         //onSearchChange is a function which will pass the event to it's inner 
         //there the dispatch will get called which will call the setSearchField action in redux and 
         //it will hand over the event.target.value (which is the stuff typed in the search box)
+        onRouteChange: (route) => dispatch(setRoute(route)),
         onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
         onRequestPeople: () => dispatch(requestPeople())                    //requestPeople needs the dispatch function
     }

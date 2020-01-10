@@ -1,10 +1,11 @@
 import React from 'react'
 
 import './ImprintButton.css';
+import { IMPRINT_ROUTE } from '../../../constants';
 
 
-const ImprintButton = ({ onRouteChange, route }) => {
-    return <div className="ImprintButtonContainer"> <img className="ImprintButton" onClick={() => onRouteChange(route)} src="/images/imprint.png"></img> </div>
+const ImprintButton = ({ onRouteChange }) => {
+    return <div className="ImprintButtonContainer"> <img className="ImprintButton" onClick={() => onRouteChange(IMPRINT_ROUTE)} src="/images/imprint.png"></img> </div>
 }
 
 export default ImprintButton;

@@ -1,7 +1,7 @@
 import React, { Component, Suspense, lazy, Fragment } from 'react';   //destructuring (instead of React.Component)
 
 import {
-    HEADER_ROUTE,
+    INITIAL_ROUTE,
     IMPRINT_ROUTE,
     TECHNOLOGYINFO_ROUTE
 } from '../../constants'       //get constants form constants file
@@ -24,26 +24,16 @@ const AsyncPageImprint = lazy(() => import('../../components/Pages/Imprint/Impri
 
 class MainPage extends Component {   //class App will use the component lib / Component expects that there is a render function in this class
 
-    constructor() {
-        super();
-        this.state = {
-            route: 'main'
-        };
-
-    }
-    onRouteChange = (route) => {
-        this.setState({ route: route });
-    }
     getRouteComponent = (route, onSearchChange, firstPeoplePending, morePeoplePending) => {
 
-        if (route === 'main') {
+        if (route === INITIAL_ROUTE) {
             return (
                 <Fragment>
                     <SearchBox searchChange={onSearchChange} />
                     <Scroll>
                         <ErrorBoundry>
                             {firstPeoplePending ?  //return html back depending on the isPending flag
-                                <LoadingSpinner />
+                                <LoadingSpinner swapiLabel={true} />
                                 :
                                 <CardList people={this.filterPeople()} morePeoplePending={morePeoplePending} />
                             }
@@ -53,13 +43,13 @@ class MainPage extends Component {   //class App will use the component lib / Co
             )
         } else if (route === IMPRINT_ROUTE) {
             return (
-                <Suspense fallback={< div > Loading...</div >}>
+                <Suspense fallback={<LoadingSpinner swapiLabel={false} />}>
                     <AsyncPageImprint />
                 </Suspense>
             )
         } else if (route === TECHNOLOGYINFO_ROUTE) {
             return (
-                <Suspense fallback={< div > Loading...</div >}>
+                <Suspense fallback={<LoadingSpinner swapiLabel={false} />}>
                     <AsyncPageTechnologyInfo />
                 </Suspense>
             )
@@ -76,17 +66,17 @@ class MainPage extends Component {   //class App will use the component lib / Co
     }
 
     render() {
-        const { onSearchChange, firstPeoplePending, morePeoplePending } = this.props;
-        let page;
-        page = this.getRouteComponent(this.state.route, onSearchChange, firstPeoplePending, morePeoplePending);
+        const { route, onRouteChange, onSearchChange, firstPeoplePending, morePeoplePending } = this.props;
+        let page = this.getRouteComponent(route, onSearchChange, firstPeoplePending, morePeoplePending);
+
         return (
             <div className='tc' >
                 <div className='wrapper'>
-                    <Header onRouteChange={this.onRouteChange} route={HEADER_ROUTE} />
+                    <Header onRouteChange={onRouteChange} />
                     {page}
                 </div>
-                <TechnologyInfoButton onRouteChange={this.onRouteChange} route={TECHNOLOGYINFO_ROUTE} />
-                <ImprintButton onRouteChange={this.onRouteChange} route={IMPRINT_ROUTE} />
+                <TechnologyInfoButton onRouteChange={onRouteChange} />
+                <ImprintButton onRouteChange={onRouteChange} />
             </div>
         )
     }
