@@ -28,7 +28,7 @@ This Star Wars Characters App uses a number of open source projects to work prop
 * [React.lazy] - to render React components dynamically
 * [Redux] - a predictable state container for JS apps
 * [Redux Thunk] - Redux middleware
-* [Tachyons] - evented I/O for the backend
+* [Tachyons] - to style much easier and faster
 
 
 
