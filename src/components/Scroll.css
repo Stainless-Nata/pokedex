@@ -1,6 +1,7 @@
 .scrollContainer {
     overflow-y: scroll;
     height: 75vh;
+    margin-left: 12px;
 }
 .scrollContainer::-webkit-scrollbar {
     width: 12px;
@@ -17,3 +18,33 @@
   .scrollContainer::-webkit-scrollbar-thumb:hover {
     background: white; 
   }
+
+
+
+  @media only screen and (max-width: 1600px) and (max-height: 1060px) {
+    .scrollContainer {
+      overflow-y: scroll;
+      height: 60vh;
+      margin-left: 12px;
+  }
+  }  
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .scrollContainer {
+    overflow-y: scroll;
+    height: 60vh;
+    margin-left: 12px;
+}
+}  
+
+
+@media only screen and (max-width: 600px) and (max-height: 590px) {
+  .scrollContainer {
+    overflow-y: scroll;
+    height: 50vh;
+    margin-left: 12px;
+}
+}  
+
