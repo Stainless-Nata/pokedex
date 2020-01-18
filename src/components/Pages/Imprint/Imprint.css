@@ -47,3 +47,18 @@
     letter-spacing: 2px;
     font-weight: bold;
 }
+
+
+@media only screen and (max-width: 600px)  {
+    .Imprint {
+        background-color: #334053;
+        color: white;
+        display: block;
+        position: relative;
+        margin-left: 0;
+        left: 1%;
+        width: 98%;
+        height: 70vh;
+        margin-top: 0px;
+    }
+}
