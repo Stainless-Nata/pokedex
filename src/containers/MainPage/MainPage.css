@@ -1,3 +1,7 @@
+body {
+    background-image: url("/images/stars_background.png");
+}
+
 @font-face {
     font-display: swap;
     font-family: 'STAR JEDI';
