@@ -5,3 +5,9 @@
 .header:hover {
     cursor: pointer;
 }
+
+@media only screen and (max-width: 450px)  {
+    .header {
+        font-size: 20px !important;
+    }
+}

@@ -15,7 +15,8 @@ const TechnologyInfo = () => {
             <br />
             <h3>Tested with</h3>
             <p>Jest</p>
-            <br />{/**
+            <br />
+            <h3>This page is mobile responsive! Go and check it out 📲</h3>{/**
             <h3>Special technologies used</h3>
             <p>PWA<br />This page is a Progressive Web App, <br />which means it caches data locally and enables users <br />to work without any internet connection 🤓 <br /><br />Go and check it out on your own!</p>
              */}
