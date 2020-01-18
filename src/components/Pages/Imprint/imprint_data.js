@@ -1,6 +1,6 @@
 export const imprint = {
     headline: 'Legal notice',
-    text: `Website legal notice <br/>
+    text: `
     1.	Introduction
     1.1	This disclaimer shall govern your use of our website.
     1.2	By using our website, you accept this disclaimer in full; accordingly, if you disagree with this disclaimer or any part of this disclaimer, you must not use our website.

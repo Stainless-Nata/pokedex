@@ -11,3 +11,25 @@
 .Imprint .scrollContainer {
     height: 100% !important;
 }
+
+
+.Imprint ol { 
+    counter-reset: item;
+    text-align: left;
+    padding-inline-start: 20px !important;
+}
+.Imprint li{ 
+    display: block;
+}
+.Imprint li:before { 
+    content: counters(item, ".") " "; 
+    counter-increment: item 
+}
+
+.Imprint .topli {
+    font-size: 25px;
+}
+
+.topli li{
+    font-size: 20px;
+}
