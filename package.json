@@ -1,8 +1,8 @@
 {
   "name": "starwars",
   "version": "1.0.0",
-  "private": true,
-  "homepage": "",
+  "private": false,
+  "homepage": "cscheffauer.github.io/starwars",
   "dependencies": {
     "gh-pages": "^2.1.1",
     "react": "^16.8.6",
@@ -45,9 +45,9 @@
       "!**/vendor/**"
     ]
   },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "description": "This Star Wars Character App allows you to search for your favourite Star Wars Character.",
   "main": "index.js",
-  "author": "",
+  "author": "Christoph Scheffauer",
   "license": "ISC",
   "devDependencies": {
     "enzyme": "^3.10.0",
