@@ -48,12 +48,12 @@ $ npm start
 
 Want to contribute? Great!
 
-Fork it and add your own twists to it. Can't wait to see your ideas 🤓.
+Fork it and add your own twists to it. Can't wait to see your ideas 🤓
 
 
 ## Todos
 
-Check out the open issues at the github project.
+Check out the open issues at the [projects tab](https://github.com/cscheffauer/starwars/projects) 📝
 
 
 License
