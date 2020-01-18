@@ -3,8 +3,8 @@
     color: white;
     display: block;
     position: relative;
-    left: 25%;
-    width: 50%;
+    left: 15%;
+    width: 70%;
     height: 500px;
 }
 
@@ -32,4 +32,18 @@
 
 .topli li{
     font-size: 20px;
+}
+
+.Imprint a {
+    text-decoration: none;
+    color: rgb(98,255,254);
+    font-weight: bold;
+}
+
+
+.Imprint a:hover {
+    cursor: pointer;
+    color: rgb(98,255,254);
+    letter-spacing: 2px;
+    font-weight: bold;
 }

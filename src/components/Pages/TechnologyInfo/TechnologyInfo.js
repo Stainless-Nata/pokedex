@@ -11,12 +11,12 @@ const TechnologyInfo = () => {
             <p>(The API itself is not reliable and fast, that's why multiple stages of loading and visual loading spinners have been implemented)</p>
             <br />
             <h3>This page was built with </h3>
-            <p>React.js, Redux, React-lazy</p>
+            <p>React.js, React-lazy, Redux, Redux-Thunk, Tachyons</p>
             <br />
             <h3>Tested with</h3>
             <p>Jest</p>
             <br />
-            <h3>This page is mobile responsive! Go and check it out 📲</h3>{/**
+            <h3>This page is mobile responsive! Go and check it out <span aria-label="phone-emoji" role="img">📲</span></h3>{/**
             <h3>Special technologies used</h3>
             <p>PWA<br />This page is a Progressive Web App, <br />which means it caches data locally and enables users <br />to work without any internet connection 🤓 <br /><br />Go and check it out on your own!</p>
              */}

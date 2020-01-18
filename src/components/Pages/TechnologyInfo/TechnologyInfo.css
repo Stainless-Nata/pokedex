@@ -3,8 +3,8 @@
     color: white;
     display: block;
     position: relative;
-    left: 25%;
-    width: 50%;
+    left: 15%;
+    width: 70%;
     height: auto;
 }
 
@@ -14,17 +14,18 @@
 
 .TechnologyInfo a {
     text-decoration: none;
-    color: white;
+    color: rgb(98,255,254);
     display: block;
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+    font-weight: bold;
 }
 
 .TechnologyInfo a:hover {
     cursor: pointer;
-    color: white;
+    color: rgb(98,255,254);
     letter-spacing: 3px;
     font-weight: bold;
 }
