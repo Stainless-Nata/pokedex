@@ -43,8 +43,18 @@
 @media only screen and (max-width: 600px) and (max-height: 590px) {
   .scrollContainer {
     overflow-y: scroll;
-    height: 65vh;
+    height: 60vh;
     margin-left: 12px;
 }
 }  
+
+/*
+* remove margin on iOS devices
+*/
+
+@supports (-webkit-overflow-scrolling: touch) {     
+  .scrollContainer {
+    margin-left: 0px;
+}
+}
 
