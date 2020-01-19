@@ -18,16 +18,24 @@ const nameImageSwitch = (name, species) => {
             return <img alt={`${name}`} src={`images/cards/obiwan-kenobi.png`} />;
         case 'Boba Fett':
             return <img alt={`${name}`} src={`images/cards/boba-fett.png`} />;
+        case 'Bossk':
+            return <img alt={`${name}`} src={`images/cards/bossk.png`} />;
         case 'Ackbar':
             return <img alt={`${name}`} src={`images/cards/admiral-ackbar.png`} />;
         case 'Chewbacca':
             return <img alt={`${name}`} src={`images/cards/chewbacca.png`} />;
         case 'Darth Maul':
             return <img alt={`${name}`} src={`images/cards/darth-maul.png`} />;
+        case 'Nien Nunb':
+            return <img alt={`${name}`} src={`images/cards/niennunb.png`} />;
+        case 'Nute Gunray':
+            return <img alt={`${name}`} src={`images/cards/neimoidian.png`} />;
         case 'Palpatine':
             return <img alt={`${name}`} src={`images/cards/emperor-palpatine.png`} />;
         case 'Greedo':
             return <img alt={`${name}`} src={`images/cards/greedo.png`} />;
+        case 'IG-88':
+            return <img alt={`${name}`} src={`images/cards/ig88.png`} />;
         case 'Han Solo':
             return <img alt={`${name}`} src={`images/cards/han-solo.png`} />;
         case 'Jabba Desilijic Tiure':
@@ -38,8 +46,16 @@ const nameImageSwitch = (name, species) => {
             return <img alt={`${name}`} src={`images/cards/lando-calrissian.png`} />;
         case 'Lobot':
             return <img alt={`${name}`} src={`images/cards/lobot.png`} />;
+        case 'Sebulba':
+            return <img alt={`${name}`} src={`images/cards/sebulba.png`} />;
+        case 'Ric Olié':
+            return <img alt={`${name}`} src={`images/cards/red-five.png`} />;
+        case 'Quarsh Panaka':
+            return <img alt={`${name}`} src={`images/cards/red-five.png`} />;
         case 'Qui-Gon Jinn':
             return <img alt={`${name}`} src={`images/cards/qui-gon-jinn.png`} />;
+        case 'R5-D4':
+            return <img alt={`${name}`} src={`images/cards/r5d4.png`} />;
         case 'Yoda':
             return <img alt={`${name}`} src={`images/cards/yoda.png`} />;
         case 'Wicket Systri Warrick':
@@ -48,8 +64,14 @@ const nameImageSwitch = (name, species) => {
             switch (species) {
                 case 'Human':
                     return <img alt={`${name}`} src={`images/cards/red-five.png`} />;
+                case 'Kaminoan':
+                    return <img alt={`${name}`} src={`images/cards/kaminoan.png`} />;
+                case 'Gungan':
+                    return <img alt={`${name}`} src={`images/cards/gungan.png`} />;
                 case 'Mirialan':
                     return <img alt={`${name}`} src={`images/cards/mirialan.png`} />;
+                case 'Toydarian':
+                    return <img alt={`${name}`} src={`images/cards/toydarian.png`} />;
                 case "Twi'lek":
                     return <img alt={`${name}`} src={`images/cards/twilek.png`} />;
                 default:

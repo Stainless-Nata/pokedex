@@ -34,7 +34,7 @@
 @media only screen and (max-width: 600px) {
   .scrollContainer {
     overflow-y: scroll;
-    height: 70vh;
+    height: 65vh;
     margin-left: 12px;
 }
 }  
