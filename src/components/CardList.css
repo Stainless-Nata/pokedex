@@ -1,1 +1,22 @@
+.noapiOutter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.noapiContainer {
+    justify-self: center;
+    background-color: rgba(0,0,0,0.8);
+    width: fit-content;
+}
 
+.noapiContainer p{
+    font-size: 20px;
+    color: white;
+    
+}
+
+.noapiContainer a{
+    font-size: 20px;
+    color: #34d5eb;
+    
+}

@@ -32,9 +32,10 @@ class MainPage extends Component {   //class App will use the component lib / Co
                     <SearchBox searchChange={onSearchChange} />
                     <Scroll>
                         <ErrorBoundry>
-                            {firstPeoplePending ?  //return html back depending on the isPending flag
+                            {
+                                /*firstPeoplePending ?  //return html back depending on the isPending flag
                                 <LoadingSpinner swapiLabel={true} />
-                                :
+                                :*/
                                 <CardList people={this.filterPeople()} morePeoplePending={morePeoplePending} />
                             }
                         </ErrorBoundry>
