@@ -1,11 +1,11 @@
-export const getFirstPeople = async (link) => {
-    let nextLink = "";
-    let data = await fetch(link);
-    let data_json = await data.json();
-    let people = data_json.results;
-    nextLink = await data_json.next;
-    return { people, nextLink };
+
+
+
+export const getPokemon = () => {
+    
 }
+
+
 
 export const getMorePeople = async (link) => {
     let tempPeople = [];

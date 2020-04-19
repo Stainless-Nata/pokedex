@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'          //importing the provider from the react-redux
+
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import { createLogger } from 'redux-logger'
 import thunkMiddleware from 'redux-thunk'
@@ -17,9 +18,8 @@ const rootReducer = combineReducers({ changeRoute, searchPeople, requestPeople }
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunkMiddleware, logger)));
 //to create the store with the root reducer and apply the thunkMiddleware and the logger to the store
 
-
 ReactDOM.render(
-    <Provider store={store}>
+    <Provider store={store} >
         <App />
     </Provider>, document.getElementById('root'));
 //render the provider with the app to the html tag with root as id (is in public/index.html)
