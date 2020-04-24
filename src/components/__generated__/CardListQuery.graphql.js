@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 7a6c12c6706612dea1c7c2ed249814c9
+ * @relayHash 2fd67543b6e2821ae2295110d4e7802f
  */
 
 /* eslint-disable */
@@ -15,20 +15,7 @@ export type CardListQueryResponse = {|
     +id: string,
     +name: ?string,
     +image: ?string,
-    +maxCP: ?number,
-    +maxHP: ?number,
-    +attacks: ?{|
-      +fast: ?$ReadOnlyArray<?{|
-        +name: ?string,
-        +type: ?string,
-        +damage: ?number,
-      |}>,
-      +special: ?$ReadOnlyArray<?{|
-        +name: ?string,
-        +type: ?string,
-        +damage: ?number,
-      |}>,
-    |},
+    +types: ?$ReadOnlyArray<?string>,
   |}>
 |};
 export type CardListQuery = {|
@@ -44,50 +31,13 @@ query CardListQuery {
     id
     name
     image
-    maxCP
-    maxHP
-    attacks {
-      fast {
-        name
-        type
-        damage
-      }
-      special {
-        name
-        type
-        damage
-      }
-    }
+    types
   }
 }
 */
 
 const node/*: ConcreteRequest*/ = (function(){
-var v0 = {
-  "kind": "ScalarField",
-  "alias": null,
-  "name": "name",
-  "args": null,
-  "storageKey": null
-},
-v1 = [
-  (v0/*: any*/),
-  {
-    "kind": "ScalarField",
-    "alias": null,
-    "name": "type",
-    "args": null,
-    "storageKey": null
-  },
-  {
-    "kind": "ScalarField",
-    "alias": null,
-    "name": "damage",
-    "args": null,
-    "storageKey": null
-  }
-],
-v2 = [
+var v0 = [
   {
     "kind": "LinkedField",
     "alias": null,
@@ -110,7 +60,13 @@ v2 = [
         "args": null,
         "storageKey": null
       },
-      (v0/*: any*/),
+      {
+        "kind": "ScalarField",
+        "alias": null,
+        "name": "name",
+        "args": null,
+        "storageKey": null
+      },
       {
         "kind": "ScalarField",
         "alias": null,
@@ -121,47 +77,9 @@ v2 = [
       {
         "kind": "ScalarField",
         "alias": null,
-        "name": "maxCP",
+        "name": "types",
         "args": null,
         "storageKey": null
-      },
-      {
-        "kind": "ScalarField",
-        "alias": null,
-        "name": "maxHP",
-        "args": null,
-        "storageKey": null
-      },
-      {
-        "kind": "LinkedField",
-        "alias": null,
-        "name": "attacks",
-        "storageKey": null,
-        "args": null,
-        "concreteType": "PokemonAttack",
-        "plural": false,
-        "selections": [
-          {
-            "kind": "LinkedField",
-            "alias": null,
-            "name": "fast",
-            "storageKey": null,
-            "args": null,
-            "concreteType": "Attack",
-            "plural": true,
-            "selections": (v1/*: any*/)
-          },
-          {
-            "kind": "LinkedField",
-            "alias": null,
-            "name": "special",
-            "storageKey": null,
-            "args": null,
-            "concreteType": "Attack",
-            "plural": true,
-            "selections": (v1/*: any*/)
-          }
-        ]
       }
     ]
   }
@@ -174,24 +92,24 @@ return {
     "type": "Query",
     "metadata": null,
     "argumentDefinitions": [],
-    "selections": (v2/*: any*/)
+    "selections": (v0/*: any*/)
   },
   "operation": {
     "kind": "Operation",
     "name": "CardListQuery",
     "argumentDefinitions": [],
-    "selections": (v2/*: any*/)
+    "selections": (v0/*: any*/)
   },
   "params": {
     "operationKind": "query",
     "name": "CardListQuery",
     "id": null,
-    "text": "query CardListQuery {\n  pokemons(first: 151) {\n    id\n    name\n    image\n    maxCP\n    maxHP\n    attacks {\n      fast {\n        name\n        type\n        damage\n      }\n      special {\n        name\n        type\n        damage\n      }\n    }\n  }\n}\n",
+    "text": "query CardListQuery {\n  pokemons(first: 151) {\n    id\n    name\n    image\n    types\n  }\n}\n",
     "metadata": {}
   }
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = 'aa89fc8f3aa61a19596b219ecc65ad01';
+(node/*: any*/).hash = 'e43c005fb18010565f4841954d39704d';
 
 module.exports = node;

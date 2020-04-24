@@ -2,7 +2,7 @@ import React from 'react';
 
 import './SearchBox.css';
 
-const SearchBox = ({ searchChange }) => {
+const SearchBox = ({ setSearchChange }) => {
     return (
         <div className="pa1">
             <input
@@ -10,7 +10,7 @@ const SearchBox = ({ searchChange }) => {
                 className="pa3 searchBox"
                 type='search'
                 placeholder='Search characters'
-                onChange={searchChange}
+                onChange={(e) => setSearchChange(e.target.value)}
             />
         </div>
     );

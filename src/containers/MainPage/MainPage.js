@@ -24,19 +24,27 @@ const AsyncPageImprint = lazy(() => import('../../components/Pages/Imprint/Impri
 
 class MainPage extends Component {   //class App will use the component lib / Component expects that there is a render function in this class
 
-    getRouteComponent = (route, onSearchChange, firstPeoplePending, morePeoplePending) => {
+    constructor() {
+        super();
+        this.state = {
+            searchBoxInput: ""
+        }
+    }
+
+    setSearchChange = (searchBoxInput) => {
+        this.setState({ searchBoxInput: searchBoxInput });
+    }
+
+    getRouteComponent = (route) => {
 
         if (route === INITIAL_ROUTE) {
             return (
                 <Fragment>
-                    <SearchBox searchChange={onSearchChange} />
+                    <SearchBox setSearchChange={this.setSearchChange} />
                     <Scroll>
                         <ErrorBoundry>
                             {
-                                /*firstPeoplePending ?  //return html back depending on the isPending flag
-                                <LoadingSpinner swapiLabel={true} />
-                                :*/
-                                <CardList people={this.filterPeople()} morePeoplePending={morePeoplePending} />
+                                <CardList searchBoxInput={this.state.searchBoxInput} />
                             }
                         </ErrorBoundry>
                     </Scroll>
@@ -67,8 +75,8 @@ class MainPage extends Component {   //class App will use the component lib / Co
     }
 
     render() {
-        const { route, onRouteChange, onSearchChange, firstPeoplePending, morePeoplePending } = this.props;
-        let page = this.getRouteComponent(route, onSearchChange, firstPeoplePending, morePeoplePending);
+        const { route, onRouteChange } = this.props;
+        let page = this.getRouteComponent(route);
 
         return (
             <div className='tc' >
