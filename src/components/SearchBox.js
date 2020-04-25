@@ -4,12 +4,12 @@ import './SearchBox.css';
 
 const SearchBox = ({ setSearchChange }) => {
     return (
-        <div className="pa1">
+        <div className="searchboxWrapper">
             <input
                 aria-label='Search Characters'
-                className="pa3 searchBox"
+                className="searchBox"
                 type='search'
-                placeholder='Search characters'
+                placeholder='SEARCH'
                 onChange={(e) => setSearchChange(e.target.value)}
             />
         </div>

@@ -7,7 +7,7 @@ const Card = ({ id, name, image, types, }) => {         //receiving props and de
 
     return (
         <Fragment>
-            <div className='card tc dib br3 pa3 ma2 grow bw2 shadow-5'>
+            <div className='card'>
                 <img alt={`image ` + name} src={image} />
                 <div>
                     <h2>{name}</h2>

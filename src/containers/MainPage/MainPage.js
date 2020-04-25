@@ -65,35 +65,22 @@ class MainPage extends Component {   //class App will use the component lib / Co
         }
     }
 
-    componentDidMount() {
-        this.props.onRequestPeople();
-    }
-    filterPeople = () => {
-        return this.props.people.filter(person => {      //filter the people and return them to filteredpeople
-            return person.name.toLowerCase().includes(this.props.searchField.toLowerCase());
-        });
-    }
-
     render() {
         const { route, onRouteChange } = this.props;
         let page = this.getRouteComponent(route);
 
         return (
-            <div className='tc' >
+            <>
                 <div className='wrapper'>
-                    <Header onRouteChange={onRouteChange} />
-                    {page}
+                    <div className='main'>
+                        {page}
+                        <img className='pokeball' src="images/pokeball_grey.png" />
+                    </div>
                 </div>
                 <TechnologyInfoButton onRouteChange={onRouteChange} />
                 <ImprintButton onRouteChange={onRouteChange} />
-            </div>
+            </>
         )
     }
 }
 export default MainPage;
-
-//connect is a higher order function - will return another function -> that's why it is written that way above
-//
-//connect() is subscribed to the redux store now and it accepts 2 params: 
-//1st is mapStateToProps: what state the component is interested in
-//2nd is mapDispatchToProps: 

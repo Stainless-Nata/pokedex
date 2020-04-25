@@ -1,35 +1,43 @@
 body {
-    background-image: url("../../images/starsbackground.png");
+    background-color: #181B1D;
 }
 
 @font-face {
     font-display: swap;
-    font-family: 'STAR JEDI';
+    font-family: 'PTSans';
     font-style: normal;
     font-weight: normal;
-    src: local('STAR JEDI'), url('../../fonts/Starjedi.ttf') format('woff');
+    src: local('PTSans'), url('../../fonts/PTSans-Regular.ttf') format('woff');
 }
 
-h1 {
-    font-family: 'STAR JEDI';
-    color: white;
-}
 
 .wrapper {
     height: 100%;
-    width: 80%;
-    position: absolute;
-    left: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-    .wrapper {
-    height: 100%;
-    width: 100%;
-    left: 0;
-    }
+.main {
+    background-color: #BFBFBF;
+    width: 865px;
+    margin-top: 50px;
+    height: calc(100vh - 50px);
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    position: absolute;
 }
+
+.pokeball {
+    width: 175px;
+    height: 175px;
+    position: absolute;
+    top: -30px;
+    right: -25px;
+}
+
+
 
 
 

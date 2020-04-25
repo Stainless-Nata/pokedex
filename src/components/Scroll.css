@@ -1,7 +1,7 @@
 .scrollContainer {
+    margin-top: 160px;
     overflow-y: scroll;
-    height: 75vh;
-    margin-left: 12px;
+    height: calc(100vh - 210px);
 }
 .scrollContainer::-webkit-scrollbar {
     width: 12px;
