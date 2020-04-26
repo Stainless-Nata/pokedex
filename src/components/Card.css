@@ -1,3 +1,7 @@
+  .cardWrapper {
+    margin-bottom: 25px;
+  }
+
 .card{
     background-color: white;
     color: black;
@@ -5,7 +9,6 @@
     border-radius: 28px;
     margin-left: 70px;
     margin-right: 70px;
-    margin-bottom: 25px;
     font-family: 'PTSans';
     display: flex;
     flex-direction: row;
@@ -114,4 +117,17 @@
           -ms-user-select: none; /* Internet Explorer/Edge */
               user-select: none; /* Non-prefixed version, currently
                                     supported by Chrome, Opera and Firefox */
+  }
+
+ 
+
+  .cardDetails {
+    margin-left: 70px;
+    margin-right: 70px;
+    height: 383px;
+    background-color: #fff;
+    z-index: 90;
+    margin-top: -25px;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
   }

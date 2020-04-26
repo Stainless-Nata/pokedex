@@ -6,7 +6,7 @@ import "./Card.css";
 const Card = ({ id, name, image, types, }) => {         //receiving props and destructuring them in the brackets
 
     return (
-        <Fragment>
+        <div className="cardWrapper">
             <div className='card noselect'>
                 <img draggable="false" alt={`image ` + name} src={image} />
                 <div className='pokemonNameSection'>
@@ -35,7 +35,8 @@ const Card = ({ id, name, image, types, }) => {         //receiving props and de
                     <div className='trianglePosition pokemonClosedTriangle'></div>
                 </div>
             </div>
-        </Fragment>
+            <div className="cardDetails"></div>
+        </div>
     );
 }
 
