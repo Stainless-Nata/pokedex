@@ -7,8 +7,8 @@ const Card = ({ id, name, image, types, }) => {         //receiving props and de
 
     return (
         <Fragment>
-            <div className='card'>
-                <img alt={`image ` + name} src={image} />
+            <div className='card noselect'>
+                <img draggable="false" alt={`image ` + name} src={image} />
                 <div className='pokemonNameSection'>
                     <p>{name}</p>
                 </div>
