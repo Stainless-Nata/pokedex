@@ -2,7 +2,7 @@ import React, { Component } from 'react';   //destructuring (instead of React.Co
 import { connect } from 'react-redux';
 import MainPage from './MainPage/MainPage'
 
-import { setRoute, setSearchField, requestPeople } from '../actions'
+import { setRoute, setSearchField } from '../actions'
 
 const mapStateToProps = state => {
     return {

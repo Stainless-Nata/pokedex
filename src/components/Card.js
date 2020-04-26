@@ -3,11 +3,15 @@ import React, { Fragment } from 'react';
 import "./Card.css";
 
 
-const Card = ({ id, name, image, types, }) => {         //receiving props and destructuring them in the brackets
+const Card = ({ id, name, image, types, expanded, onExpandedChange }) => {         //receiving props and destructuring them in the brackets
+
+    const toggleOnExpandedChange = (id) => {
+        id === expanded ? onExpandedChange(undefined) : onExpandedChange(id);
+    }
 
     return (
         <div className="cardWrapper">
-            <div className='card noselect'>
+            <div onClick={() => toggleOnExpandedChange(id)} className='card noselect'>
                 <img draggable="false" alt={`image ` + name} src={image} />
                 <div className='pokemonNameSection'>
                     <p>{name}</p>
@@ -35,7 +39,11 @@ const Card = ({ id, name, image, types, }) => {         //receiving props and de
                     <div className='trianglePosition pokemonClosedTriangle'></div>
                 </div>
             </div>
-            <div className="cardDetails"></div>
+            {
+                expanded === id &&
+                <div className="cardDetails"></div>
+            }
+
         </div>
     );
 }

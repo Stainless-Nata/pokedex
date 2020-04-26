@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { connect } from 'react-redux';
 import Card from './Card';
 import LoadingSpinner from './Layout/LoadingSpinner/LoadingSpinner'
 import { QueryRenderer } from 'react-relay';
@@ -7,7 +8,24 @@ import graphql from 'babel-plugin-relay/macro';
 import environment from '../environment';
 import './CardList.css';
 
-const CardList = ({ searchBoxInput }) => {          //using people array as props
+import { setExpanded } from '../actions'
+
+const mapStateToProps = state => {
+    return {
+        expanded: state.changeExpanded.id,
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onExpandedChange: (id) => dispatch(setExpanded(id)),
+    }
+}
+
+
+
+const CardList = ({ searchBoxInput, expanded, onExpandedChange }) => {          //using people array as props
+
     return (
         <QueryRenderer
             environment={environment}
@@ -39,6 +57,8 @@ const CardList = ({ searchBoxInput }) => {          //using people array as prop
                         name={pokemon.name}
                         image={pokemon.image}
                         types={pokemon.types}
+                        expanded={expanded}
+                        onExpandedChange={onExpandedChange}
                     />)
                 })
             }}
@@ -46,4 +66,4 @@ const CardList = ({ searchBoxInput }) => {          //using people array as prop
     );
 }
 
-export default CardList;
+export default connect(mapStateToProps, mapDispatchToProps)(CardList);
