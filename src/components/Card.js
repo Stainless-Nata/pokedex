@@ -8,13 +8,17 @@ const Card = ({ id, name, image, types, expanded, onExpandedChange }) => {      
     const toggleOnExpandedChange = (id) => {
         id === expanded ? onExpandedChange(undefined) : onExpandedChange(id);
     }
+    const triangle = (expanded === id) ? 'pokemonOpenTriangle' : 'pokemonClosedTriangle';
 
     return (
         <div className="cardWrapper">
             <div onClick={() => toggleOnExpandedChange(id)} className='card noselect'>
-                <img draggable="false" alt={`image ` + name} src={image} />
+                {
+                    !(expanded === id) &&
+                    <img draggable="false" alt={`image ` + name} src={image} />
+                }
                 <div className='pokemonNameSection'>
-                    <p>{name}</p>
+                    <p className={(expanded === id) && `pokemonNameExpanded`}>{name}</p>
                 </div>
                 <div className='pokemonTypeSection'>
                     <div className='pokemonTypeOverlay'>
@@ -36,15 +40,28 @@ const Card = ({ id, name, image, types, expanded, onExpandedChange }) => {      
                                 <p>{types}</p>
                             </div>
                     }
-                    <div className='trianglePosition pokemonClosedTriangle'></div>
+                    <div className={`trianglePosition ` + triangle}></div>
                 </div>
             </div>
             {
                 expanded === id &&
-                <div className="cardDetails"></div>
+                <div className="cardDetails">
+                    <div>
+                        <h3>Facts</h3>
+                        <div className="factsImageWrapper">
+                            <img draggable="false" alt={`image ` + name} src={image} />
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Attacks</h3>
+                    </div>
+                    <div>
+                        <h3>Evolutions</h3>
+                    </div>
+                </div>
             }
 
-        </div>
+        </div >
     );
 }
 

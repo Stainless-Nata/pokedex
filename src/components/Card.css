@@ -20,6 +20,10 @@
     cursor: pointer;
 }
 
+.pokemonNameExpanded {
+    margin-left: 50px !important;
+}
+
 .pokemonNameSection p{
     margin: 0 0 0 30px;
     font-size: 30px;
@@ -98,7 +102,7 @@
 	height: 0;
 	border-left: 20px solid transparent;
 	border-right: 20px solid transparent;
-	border-top: 23px solid #555;
+	border-bottom: 23px solid #555;
 }
 
 .card img{
@@ -128,6 +132,31 @@
     background-color: #fff;
     z-index: 90;
     margin-top: -25px;
+    padding-top: 45px;
     border-bottom-left-radius: 28px;
     border-bottom-right-radius: 28px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .cardDetails div {
+      flex-grow: 1;
+      flex-basis: 0;
+  }
+
+  .cardDetails div h3 {
+      margin: 0;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 17.5px;
+  }
+
+  .cardDetails img {
+      object-fit: contain;
+      width: 100px;
+      height: 110px;
+      margin-top: 25px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
   }
