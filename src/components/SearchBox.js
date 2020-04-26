@@ -2,7 +2,7 @@ import React from 'react';
 
 import './SearchBox.css';
 
-const SearchBox = ({ setSearchChange }) => {
+const SearchBox = ({ searchBoxInput, setSearchChange }) => {
     return (
         <div className="searchboxWrapper">
             <input
@@ -11,6 +11,7 @@ const SearchBox = ({ setSearchChange }) => {
                 type='search'
                 placeholder='SEARCH'
                 onChange={(e) => setSearchChange(e.target.value)}
+                value={searchBoxInput}
             />
         </div>
     );

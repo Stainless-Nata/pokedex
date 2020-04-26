@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 /*
 Scroll is a wrapping component
 */
@@ -6,11 +6,13 @@ Scroll is a wrapping component
 import './Scroll.css';
 
 const Scroll = (props) => {
+    const { scrollContainer } = props;
     return (
-        <div className="scrollContainer" style={{  }}>
+        <div ref={scrollContainer} className="scrollContainer">
             {props.children}        {/* scroll will use it's children to render here*/}
         </div>
     );
-};
+}
+
 
 export default Scroll;

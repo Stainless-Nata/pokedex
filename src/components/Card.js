@@ -3,15 +3,20 @@ import React, { Fragment } from 'react';
 import "./Card.css";
 
 
-const Card = ({ id, name, image, types, height, weight, attacks, evolutions, expanded, onExpandedChange }) => {         //receiving props and destructuring them in the brackets
+const Card = ({ index, id, name, image, types, height, weight, attacks, evolutions, expanded, onExpandedChange, onClearSearch, scrollToCard }) => {         //receiving props and destructuring them in the brackets
 
-    const toggleOnExpandedChange = (id) => {
-        id === expanded ? onExpandedChange(undefined) : onExpandedChange(id);
+    const toggleOnExpandedChange = (index, id) => {
+        if (id === expanded) {
+            onExpandedChange(undefined);
+        } else {
+            scrollToCard(index);
+            onExpandedChange(id);
+        }
     }
     const triangle = (expanded === id) ? 'pokemonOpenTriangle' : 'pokemonClosedTriangle';
     return (
-        <div className="cardWrapper">
-            <div onClick={() => toggleOnExpandedChange(id)} className='card noselect'>
+        <div className="cardWrapper noselect">
+            <div onClick={() => toggleOnExpandedChange(index, id)} className='card'>
                 {
                     !(expanded === id) &&
                     <img draggable="false" alt={`image ` + name} src={image} />
@@ -79,7 +84,7 @@ const Card = ({ id, name, image, types, height, weight, attacks, evolutions, exp
                             <p className="noEvolutionFoundText">Final evolution</p> :
                             evolutions.map((evolution, i) =>
                                 <div key={i} className="evolutionsImageWrapper">
-                                    <img onClick={() => toggleOnExpandedChange(evolution.id)} style={evolutions.length > 2 ? { marginTop: 15, height: 55 } : {}} draggable="false" alt={`image ` + name} src={evolution.image} />
+                                    <img onClick={() => { onClearSearch(); toggleOnExpandedChange(evolution.id) }} style={evolutions.length > 2 ? { marginTop: 15, height: 55 } : {}} draggable="false" alt={`image ` + name} src={evolution.image} />
                                     <p>{evolution.name}</p>
                                 </div>
                             )}
