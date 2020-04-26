@@ -38,6 +38,8 @@ const CardList = ({ searchBoxInput, expanded, onExpandedChange }) => {          
                         types,
                         height{minimum, maximum},
   				        weight{minimum, maximum},
+                        attacks{fast{name,damage},special{name,damage}},
+  				        evolutions{id,name,image}
                     } 
                 }
             `}
@@ -61,6 +63,8 @@ const CardList = ({ searchBoxInput, expanded, onExpandedChange }) => {          
                         types={pokemon.types}
                         height={pokemon.height}
                         weight={pokemon.weight}
+                        attacks={pokemon.attacks}
+                        evolutions={pokemon.evolutions}
                         expanded={expanded}
                         onExpandedChange={onExpandedChange}
                     />)

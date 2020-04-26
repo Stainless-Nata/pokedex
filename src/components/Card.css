@@ -204,4 +204,25 @@
         font-size: 17px;
         font-weight: bold;
     }
+    
+    .evolutionsImageWrapper img{
+        height: 85px;
+        z-index: 100;
+    }
+    
+    .evolutionsImageWrapper img:hover {
+        cursor: pointer;
+    }
+    .evolutionsImageWrapper p{
+        font-size: 15px;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+    }
 
+    .noEvolutionFoundText {
+        margin-top: 25px;
+        font-size: 15px;
+        text-transform: uppercase;
+        text-align: center;
+    }

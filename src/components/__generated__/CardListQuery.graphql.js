@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 171efcebb3aba76145671ca500f178fa
+ * @relayHash 8fad0280661a2feb3d89d0c650f08703
  */
 
 /* eslint-disable */
@@ -24,6 +24,21 @@ export type CardListQueryResponse = {|
       +minimum: ?string,
       +maximum: ?string,
     |},
+    +attacks: ?{|
+      +fast: ?$ReadOnlyArray<?{|
+        +name: ?string,
+        +damage: ?number,
+      |}>,
+      +special: ?$ReadOnlyArray<?{|
+        +name: ?string,
+        +damage: ?number,
+      |}>,
+    |},
+    +evolutions: ?$ReadOnlyArray<?{|
+      +id: string,
+      +name: ?string,
+      +image: ?string,
+    |}>,
   |}>
 |};
 export type CardListQuery = {|
@@ -48,12 +63,48 @@ query CardListQuery {
       minimum
       maximum
     }
+    attacks {
+      fast {
+        name
+        damage
+      }
+      special {
+        name
+        damage
+      }
+    }
+    evolutions {
+      id
+      name
+      image
+    }
   }
 }
 */
 
 const node/*: ConcreteRequest*/ = (function(){
-var v0 = [
+var v0 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "id",
+  "args": null,
+  "storageKey": null
+},
+v1 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "name",
+  "args": null,
+  "storageKey": null
+},
+v2 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "image",
+  "args": null,
+  "storageKey": null
+},
+v3 = [
   {
     "kind": "ScalarField",
     "alias": null,
@@ -69,7 +120,17 @@ var v0 = [
     "storageKey": null
   }
 ],
-v1 = [
+v4 = [
+  (v1/*: any*/),
+  {
+    "kind": "ScalarField",
+    "alias": null,
+    "name": "damage",
+    "args": null,
+    "storageKey": null
+  }
+],
+v5 = [
   {
     "kind": "LinkedField",
     "alias": null,
@@ -85,27 +146,9 @@ v1 = [
     "concreteType": "Pokemon",
     "plural": true,
     "selections": [
-      {
-        "kind": "ScalarField",
-        "alias": null,
-        "name": "id",
-        "args": null,
-        "storageKey": null
-      },
-      {
-        "kind": "ScalarField",
-        "alias": null,
-        "name": "name",
-        "args": null,
-        "storageKey": null
-      },
-      {
-        "kind": "ScalarField",
-        "alias": null,
-        "name": "image",
-        "args": null,
-        "storageKey": null
-      },
+      (v0/*: any*/),
+      (v1/*: any*/),
+      (v2/*: any*/),
       {
         "kind": "ScalarField",
         "alias": null,
@@ -121,7 +164,7 @@ v1 = [
         "args": null,
         "concreteType": "PokemonDimension",
         "plural": false,
-        "selections": (v0/*: any*/)
+        "selections": (v3/*: any*/)
       },
       {
         "kind": "LinkedField",
@@ -131,7 +174,52 @@ v1 = [
         "args": null,
         "concreteType": "PokemonDimension",
         "plural": false,
-        "selections": (v0/*: any*/)
+        "selections": (v3/*: any*/)
+      },
+      {
+        "kind": "LinkedField",
+        "alias": null,
+        "name": "attacks",
+        "storageKey": null,
+        "args": null,
+        "concreteType": "PokemonAttack",
+        "plural": false,
+        "selections": [
+          {
+            "kind": "LinkedField",
+            "alias": null,
+            "name": "fast",
+            "storageKey": null,
+            "args": null,
+            "concreteType": "Attack",
+            "plural": true,
+            "selections": (v4/*: any*/)
+          },
+          {
+            "kind": "LinkedField",
+            "alias": null,
+            "name": "special",
+            "storageKey": null,
+            "args": null,
+            "concreteType": "Attack",
+            "plural": true,
+            "selections": (v4/*: any*/)
+          }
+        ]
+      },
+      {
+        "kind": "LinkedField",
+        "alias": null,
+        "name": "evolutions",
+        "storageKey": null,
+        "args": null,
+        "concreteType": "Pokemon",
+        "plural": true,
+        "selections": [
+          (v0/*: any*/),
+          (v1/*: any*/),
+          (v2/*: any*/)
+        ]
       }
     ]
   }
@@ -144,24 +232,24 @@ return {
     "type": "Query",
     "metadata": null,
     "argumentDefinitions": [],
-    "selections": (v1/*: any*/)
+    "selections": (v5/*: any*/)
   },
   "operation": {
     "kind": "Operation",
     "name": "CardListQuery",
     "argumentDefinitions": [],
-    "selections": (v1/*: any*/)
+    "selections": (v5/*: any*/)
   },
   "params": {
     "operationKind": "query",
     "name": "CardListQuery",
     "id": null,
-    "text": "query CardListQuery {\n  pokemons(first: 151) {\n    id\n    name\n    image\n    types\n    height {\n      minimum\n      maximum\n    }\n    weight {\n      minimum\n      maximum\n    }\n  }\n}\n",
+    "text": "query CardListQuery {\n  pokemons(first: 151) {\n    id\n    name\n    image\n    types\n    height {\n      minimum\n      maximum\n    }\n    weight {\n      minimum\n      maximum\n    }\n    attacks {\n      fast {\n        name\n        damage\n      }\n      special {\n        name\n        damage\n      }\n    }\n    evolutions {\n      id\n      name\n      image\n    }\n  }\n}\n",
     "metadata": {}
   }
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = 'e1469911bef85af5a87325597dc2b25c';
+(node/*: any*/).hash = '0352a9310eb8db409c5f0e6598793405';
 
 module.exports = node;

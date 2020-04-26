@@ -3,13 +3,12 @@ import React, { Fragment } from 'react';
 import "./Card.css";
 
 
-const Card = ({ id, name, image, types, height, weight, expanded, onExpandedChange }) => {         //receiving props and destructuring them in the brackets
+const Card = ({ id, name, image, types, height, weight, attacks, evolutions, expanded, onExpandedChange }) => {         //receiving props and destructuring them in the brackets
 
     const toggleOnExpandedChange = (id) => {
         id === expanded ? onExpandedChange(undefined) : onExpandedChange(id);
     }
     const triangle = (expanded === id) ? 'pokemonOpenTriangle' : 'pokemonClosedTriangle';
-
     return (
         <div className="cardWrapper">
             <div onClick={() => toggleOnExpandedChange(id)} className='card noselect'>
@@ -18,7 +17,7 @@ const Card = ({ id, name, image, types, height, weight, expanded, onExpandedChan
                     <img draggable="false" alt={`image ` + name} src={image} />
                 }
                 <div className='pokemonNameSection'>
-                    <p className={(expanded === id) && `pokemonNameExpanded`}>{name}</p>
+                    <p className={expanded === id ? `pokemonNameExpanded` : undefined}>{name}</p>
                 </div>
                 <div className='pokemonTypeSection'>
                     <div className='pokemonTypeOverlay'>
@@ -76,6 +75,14 @@ const Card = ({ id, name, image, types, height, weight, expanded, onExpandedChan
                     </div>
                     <div>
                         <h3>Evolutions</h3>
+                        {evolutions === null ?
+                            <p className="noEvolutionFoundText">Final evolution</p> :
+                            evolutions.map((evolution, i) =>
+                                <div key={i} className="evolutionsImageWrapper">
+                                    <img onClick={() => toggleOnExpandedChange(evolution.id)} style={evolutions.length > 2 ? { marginTop: 15, height: 55 } : {}} draggable="false" alt={`image ` + name} src={evolution.image} />
+                                    <p>{evolution.name}</p>
+                                </div>
+                            )}
                     </div>
                 </div>
             }
