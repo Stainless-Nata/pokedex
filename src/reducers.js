@@ -1,13 +1,7 @@
 import {
     INITIAL_ROUTE,
     CHANGE_SEARCH_FIELD,
-    REQUEST_POKEMON_PENDING,
-    REQUEST_POKEMON_SUCCESS,
-    REQUEST_FIRST_IMAGES_SUCCESS,
-    REQUEST_MORE_PEOPLE_PENDING,
-    REQUEST_MORE_PEOPLE_SUCCESS,
-    REQUEST_MORE_IMAGES_SUCCESS,
-    REQUEST_POKEMON_FAILED,
+    CHANGE_EXPANDED,
     CHANGE_ROUTE
 } from './constants'       //get constants form constants file
 
@@ -69,37 +63,4 @@ export const searchPeople = (state = initialStateSearch, action = {}) => {
     }
 }
 
-/**
- * REQUESTING PEOPLE REDUCER
- */
-
-
-
-const initialStatePeople = {
-    firstPeoplePending: false,
-    morePeoplePending: false,
-    people: [],
-    error: ''
-}
-
-export const requestPeople = (state = initialStatePeople, action = {}) => {
-    switch (action.type) {
-        case REQUEST_POKEMON_PENDING:
-            return Object.assign({}, state, { firstPeoplePending: true })      //everything in the state + new state isPending
-        case REQUEST_POKEMON_SUCCESS:
-            return Object.assign({}, state, { people: action.payload, firstPeoplePending: false })      //everything in the state + new state isPending & people
-        case REQUEST_FIRST_IMAGES_SUCCESS:
-            return Object.assign({}, state, { people: action.payload })      //everything in the state + new state isPending & people
-        case REQUEST_MORE_PEOPLE_PENDING:
-            return Object.assign({}, state, { morePeoplePending: true })      //everything in the state + new state isPending
-        case REQUEST_MORE_PEOPLE_SUCCESS:
-            return Object.assign({}, state, { people: state.people.concat(action.payload), morePeoplePending: false })      //everything in the state + new state isPending & people
-        case REQUEST_MORE_IMAGES_SUCCESS:
-            return Object.assign({}, state, { people: [...state.people.slice(0, action.payload.position), ...action.payload.people] })      //everything in the state + new state isPending & people
-        case REQUEST_POKEMON_FAILED:
-            return Object.assign({}, state, { firstPeoplePending: false, error: action.payload })      //everything in the state + errorstate
-        default:
-            return state
-    }
-}
 

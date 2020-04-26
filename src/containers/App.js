@@ -8,9 +8,6 @@ const mapStateToProps = state => {
     return {
         route: state.changeRoute.route,
         searchField: state.searchPeople.searchField,            //prop searchfield will get the state of the searchPeople.searchField
-        firstPeoplePending: state.requestPeople.firstPeoplePending,               // -''-
-        morePeoplePending: state.requestPeople.morePeoplePending,
-        people: state.requestPeople.people                      // -''-
     }
 }
 
@@ -21,7 +18,6 @@ const mapDispatchToProps = (dispatch) => {
         //it will hand over the event.target.value (which is the stuff typed in the search box)
         onRouteChange: (route) => dispatch(setRoute(route)),
         onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
-        onRequestPeople: () => dispatch(requestPeople())                    //requestPeople needs the dispatch function
     }
 }
 
