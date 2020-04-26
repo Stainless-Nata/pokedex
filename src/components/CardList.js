@@ -35,7 +35,9 @@ const CardList = ({ searchBoxInput, expanded, onExpandedChange }) => {          
                         id,
                         name,
                         image,
-                        types
+                        types,
+                        height{minimum, maximum},
+  				        weight{minimum, maximum},
                     } 
                 }
             `}
@@ -57,6 +59,8 @@ const CardList = ({ searchBoxInput, expanded, onExpandedChange }) => {          
                         name={pokemon.name}
                         image={pokemon.image}
                         types={pokemon.types}
+                        height={pokemon.height}
+                        weight={pokemon.weight}
                         expanded={expanded}
                         onExpandedChange={onExpandedChange}
                     />)

@@ -149,14 +149,59 @@
       text-align: center;
       text-transform: uppercase;
       font-size: 17.5px;
-  }
+    }
 
-  .cardDetails img {
-      object-fit: contain;
-      width: 100px;
-      height: 110px;
-      margin-top: 25px;
-      margin-left: auto;
-      margin-right: auto;
-      display: block;
-  }
+    .cardDetails img {
+        object-fit: contain;
+        width: 100px;
+        height: 110px;
+        margin-top: 25px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .factsHeightWrapper {
+        display: flex;
+        flex-direction: row;
+        margin-top: 30px;
+    }
+
+    .factsHeightWrapper div img {
+        width: unset;
+        height: 40px;
+        margin-top: 0;
+        margin-left: 60px;
+    }
+
+    .factsHeightWrapper p {
+        float:left;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        line-height: 20px;
+        font-size: 17px;
+        font-weight: bold;
+    }
+
+    .factsWeightWrapper {
+        display: flex;
+        flex-direction: row;
+        margin-top: 25px;
+    }
+
+    .factsWeightWrapper div img {
+        width: unset;
+        height: 33.4px;
+        margin-left: 55px;
+        margin-top: 3px;
+    }
+
+    .factsWeightWrapper p {
+        float:left;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        line-height: 20px;
+        font-size: 17px;
+        font-weight: bold;
+    }
+

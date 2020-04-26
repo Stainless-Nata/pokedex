@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 import "./Card.css";
 
 
-const Card = ({ id, name, image, types, expanded, onExpandedChange }) => {         //receiving props and destructuring them in the brackets
+const Card = ({ id, name, image, types, height, weight, expanded, onExpandedChange }) => {         //receiving props and destructuring them in the brackets
 
     const toggleOnExpandedChange = (id) => {
         id === expanded ? onExpandedChange(undefined) : onExpandedChange(id);
@@ -50,6 +50,25 @@ const Card = ({ id, name, image, types, expanded, onExpandedChange }) => {      
                         <h3>Facts</h3>
                         <div className="factsImageWrapper">
                             <img draggable="false" alt={`image ` + name} src={image} />
+                        </div>
+                        <div className="factsHeightWrapper">
+                            <div>
+                                <img draggable="false" alt="height_icon" src={`/images/facts/height.png`} />
+                            </div>
+                            <div>
+                                <p>Min: {height.minimum}</p>
+                                <p>Max: {height.maximum}</p>
+                            </div>
+
+                        </div>
+                        <div className="factsWeightWrapper">
+                            <div>
+                                <img draggable="false" alt="weight_icon" src={`/images/facts/weight.png`} />
+                            </div>
+                            <div>
+                                <p>Min: {weight.minimum}</p>
+                                <p>Max: {weight.maximum}</p>
+                            </div>
                         </div>
                     </div>
                     <div>
