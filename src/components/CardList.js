@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import Card from './Card';
 import LoadingSpinner from './Layout/LoadingSpinner/LoadingSpinner'
@@ -62,22 +62,24 @@ const CardList = ({ searchBoxRef, searchBoxInput, setSearchChange, expanded, onE
                 });
 
                 return filteredPokemon.map((pokemon, i) => {
-                    return (<Card
-                        key={i}
-                        index={i}
-                        id={pokemon.id}
-                        name={pokemon.name}
-                        image={pokemon.image}
-                        types={pokemon.types}
-                        height={pokemon.height}
-                        weight={pokemon.weight}
-                        attacks={pokemon.attacks}
-                        evolutions={pokemon.evolutions}
-                        expanded={expanded}
-                        onExpandedChange={onExpandedChange}
-                        searchBoxInput={searchBoxInput}
-                        searchForEvolution={searchForEvolution}
-                    />)
+                    return (
+                        <Card
+                            key={i}
+                            index={i}
+                            id={pokemon.id}
+                            name={pokemon.name}
+                            image={pokemon.image}
+                            types={pokemon.types}
+                            height={pokemon.height}
+                            weight={pokemon.weight}
+                            attacks={pokemon.attacks}
+                            evolutions={pokemon.evolutions}
+                            expanded={expanded}
+                            onExpandedChange={onExpandedChange}
+                            searchBoxInput={searchBoxInput}
+                            searchForEvolution={searchForEvolution}
+                        />
+                    )
                 })
             }}
         />

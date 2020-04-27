@@ -10,7 +10,6 @@ import CardList from '../../components/CardList';
 import SearchBox from '../../components/SearchBox';
 import Scroll from '../../components/Scroll';
 import ErrorBoundry from '../../components/ErrorBoundry';
-import Header from '../../components/Layout/Header/Header';
 import LoadingSpinner from '../../components/Layout/LoadingSpinner/LoadingSpinner';
 import TechnologyInfoButton from '../../components/Layout/TechnologyInfoButton/TechnologyInfoButton';
 
@@ -72,12 +71,16 @@ class MainPage extends Component {   //class App will use the component lib / Co
         const { route, onRouteChange } = this.props;
         let page = this.getRouteComponent(route);
 
+        const setInitialRoute = () => {
+            (route !== INITIAL_ROUTE) && onRouteChange(INITIAL_ROUTE);
+        }
+
         return (
             <>
                 <div className='wrapper'>
                     <div className='main'>
                         {page}
-                        <img className='pokeball' src="images/pokeball_grey.png" />
+                        <img onClick={() => setInitialRoute()} alt='pokeball' className={`pokeball ` + ((route !== INITIAL_ROUTE) ? `pokeballHover` : ``)} src="images/pokeball_grey.png" />
                     </div>
                 </div>
                 <TechnologyInfoButton onRouteChange={onRouteChange} />

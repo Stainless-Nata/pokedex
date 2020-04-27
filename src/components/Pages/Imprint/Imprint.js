@@ -7,10 +7,10 @@ import Scroll from '../../Scroll';
 
 const Imprint = () => {
     return (
-        <div className="Imprint tc dib br3 pa3 ma2 bw2 shadow-5">
+        <div className="Imprint">
             <Scroll>
-                <h2>Disclaimer</h2>
-                <p>This disclaimer ("Disclaimer", "Agreement") is an agreement between Website Operator ("Website Operator", "us", "we" or "our") and you ("User", "you" or "your"). This Disclaimer sets forth the general guidelines, terms and conditions of your use of the <a target="_blank" rel="noopener noreferrer" href="https://cscheffauer.github.io/starwars">cscheffauer.github.io/starwars</a> website and any of its products or services (collectively, "Website" or "Services").</p>
+                <h2>DISCLAIMER</h2>
+                <p>This disclaimer ("Disclaimer", "Agreement") is an agreement between Website Operator ("Website Operator", "us", "we" or "our") and you ("User", "you" or "your"). This Disclaimer sets forth the general guidelines, terms and conditions of your use of the <a target="_blank" rel="noopener noreferrer" href="https://cscheffauer.github.io/pokedex">cscheffauer.github.io/pokedex</a> website and any of its products or services (collectively, "Website" or "Services").</p>
                 <h3>Representation</h3>
                 <p>Any views or opinions represented in this Website are personal and belong solely to Website Operator and do not represent those of people, institutions or organizations that the owner may or may not be associated with in professional or personal capacity unless explicitly stated. Any views or opinions are not intended to malign any religion, ethnic group, club, organization, company, or individual.</p>
                 <h3>Content and postings</h3>
@@ -23,7 +23,7 @@ const Imprint = () => {
                 <h3>Contacting us</h3>
                 <p><b>Owner & Developer of this website:</b> Christoph Scheffauer</p>
                 <p>If you would like to contact us to understand more about this Disclaimer or wish to contact us concerning any matter relating to it, you may send an email to <a rel="nofollow" href="mailto:scheffauerc@gmail.com">scheffauerc@gmail.com</a></p>
-                <p>This document was last updated on January 18, 2020</p>
+                <p>This document was last updated on April 27, 2020</p>
             </Scroll>
         </div>);
 

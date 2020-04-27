@@ -1,11 +1,14 @@
 .TechnologyInfo {
-    background-color: #334053;
-    color: white;
+    color: black;
     display: block;
     position: relative;
-    left: 15%;
-    width: 70%;
-    height: auto;
+    left: 10%;
+    width: 80%;
+    font-family: 'PTSans';
+}
+
+.TechnologyInfo .scrollContainer {
+    height: calc(100vh - 370px) !important;
 }
 
 .TechnologyInfo p {
@@ -14,57 +17,10 @@
 
 .TechnologyInfo a {
     text-decoration: none;
-    color: rgb(98,255,254);
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+    color: #1e3b66;
     font-weight: bold;
 }
 
 .TechnologyInfo a:hover {
     cursor: pointer;
-    color: rgb(98,255,254);
-    letter-spacing: 3px;
-    font-weight: bold;
-}
-
-@media only screen and (max-width: 600px)  {
-
-    .TechnologyInfo {
-        background-color: #334053;
-        color: white;
-        display: block;
-        position: relative;
-        left: 1%;
-        margin-left: 0;
-        margin-top: -5px;
-        width: 98%;
-        height: 70vh;
-    }
-    .TechnologyInfo p {
-        font-size: 14px;
-    }
-}
-
-@media only screen and (max-width: 350px) and (max-height: 580px)  {
-    .TechnologyInfo {
-        background-color: #334053;
-        color: white;
-        display: block;
-        position: relative;
-        left: 1%;
-        margin-left: 0;
-        margin: 0px !important;
-        padding: 5px !important;
-        width: 98%;
-        height: 70vh;
-    }
-    .TechnologyInfo p {
-        font-size: 14px;
-    }
-    .TechnologyInfo h3 {
-        font-size: 15px;
-    }
 }

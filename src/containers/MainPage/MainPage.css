@@ -40,6 +40,10 @@ body {
     right: -25px;
 }
 
+.pokeballHover:hover {
+    cursor: pointer;
+}
+
 
 
 

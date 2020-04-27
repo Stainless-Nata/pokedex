@@ -5,26 +5,20 @@
 .morePeopleLoading {
     display: inline-block;
     margin-top: 25px;
-    color: white;
+    color: black;
     font-size: 20px;
-    font-family: 'STAR JEDI';
+    font-family: 'PTSans';
+    text-align: center;
+    width: 100%;
 }
 
-.morePeopleLoading a {
-    text-decoration: none;
-    color: white;
-}
-
-.morePeopleLoading a:hover {
-    text-decoration: underline;
-}
 .circleLoading {
     margin: auto;
     box-sizing: border-box;
     width: 50px;
     height: 50px;
     border-radius: 100%;
-    border: 2px solid rgba(51,64,83, 1);
+    border: 2px solid #606060;
     border-top-color: #FFF;
     animation: spin 1s infinite linear;
   }
