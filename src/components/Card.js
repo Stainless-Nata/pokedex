@@ -25,7 +25,12 @@ const Card = ({ id, name, image, types, height, weight, attacks, evolutions, exp
     const triangle = (expanded === id) ? 'pokemonOpenTriangle' : 'pokemonClosedTriangle';
     return (
         <div className="cardWrapper noselect">
+
             <div onClick={() => toggleOnExpandedChange(id)} className='card'>
+                {
+                    expanded === id &&
+                    <div onClick={() => toggleOnExpandedChange(id)} className="cardBorder" />
+                }
                 {
                     !(expanded === id) &&
                     <img draggable="false" alt={`image ` + name} src={image} />
@@ -125,8 +130,8 @@ const Card = ({ id, name, image, types, height, weight, attacks, evolutions, exp
                             )}
                     </div>
                 </div>
-            }
 
+            }
         </div >
     );
 }

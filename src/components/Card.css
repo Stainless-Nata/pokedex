@@ -14,11 +14,22 @@
     flex-direction: row;
     justify-content: flex-start;
     overflow: hidden;
+    position: relative;
 }
 .card:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     cursor: pointer;
 }
+
+.cardBorder {
+    border: 5px solid black;
+    height: 142px;
+    border-radius: 28px;
+    position: absolute;
+    z-index: 10;
+    width: 713px;
+}
+
 
 .pokemonNameExpanded {
     margin-left: 50px !important;
