@@ -2,10 +2,11 @@ import React from 'react';
 
 import './SearchBox.css';
 
-const SearchBox = ({ searchBoxInput, setSearchChange }) => {
+const SearchBox = ({ searchBoxRef, searchBoxInput, setSearchChange }) => {
     return (
         <div className="searchboxWrapper">
             <input
+                ref={searchBoxRef}
                 aria-label='Search Characters'
                 className="searchBox"
                 type='search'

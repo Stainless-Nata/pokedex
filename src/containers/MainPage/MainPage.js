@@ -29,12 +29,9 @@ class MainPage extends Component {   //class App will use the component lib / Co
         this.state = {
             searchBoxInput: "",
             scrollContainer: React.createRef(),
+            searchBoxRef: React.createRef(),
         }
 
-    }
-
-    scrollToCard = (index) => {
-        this.state.scrollContainer.current.scrollTop = index * 167;
     }
 
     setSearchChange = (searchBoxInput) => {
@@ -46,11 +43,11 @@ class MainPage extends Component {   //class App will use the component lib / Co
         if (route === INITIAL_ROUTE) {
             return (
                 <Fragment>
-                    <SearchBox searchBoxInput={this.state.searchBoxInput} setSearchChange={this.setSearchChange} />
+                    <SearchBox searchBoxRef={this.state.searchBoxRef} searchBoxInput={this.state.searchBoxInput} setSearchChange={this.setSearchChange} />
                     <Scroll scrollContainer={this.state.scrollContainer}>
                         <ErrorBoundry>
                             {
-                                <CardList searchBoxInput={this.state.searchBoxInput} setSearchChange={this.setSearchChange} scrollToCard={this.scrollToCard} />
+                                <CardList searchBoxRef={this.state.searchBoxRef} searchBoxInput={this.state.searchBoxInput} setSearchChange={this.setSearchChange} />
                             }
                         </ErrorBoundry>
                     </Scroll>

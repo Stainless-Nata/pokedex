@@ -3,20 +3,29 @@ import React, { Fragment } from 'react';
 import "./Card.css";
 
 
-const Card = ({ index, id, name, image, types, height, weight, attacks, evolutions, expanded, onExpandedChange, onClearSearch, scrollToCard }) => {         //receiving props and destructuring them in the brackets
+const Card = ({ id, name, image, types, height, weight, attacks, evolutions, expanded, onExpandedChange, searchBoxInput, searchForEvolution }) => {         //receiving props and destructuring them in the brackets
 
-    const toggleOnExpandedChange = (index, id) => {
+    const toggleOnExpandedChange = (id) => {
         if (id === expanded) {
             onExpandedChange(undefined);
         } else {
-            scrollToCard(index);
             onExpandedChange(id);
         }
     }
+
+    const onEvolutionClick = (id, name) => {
+        if (searchBoxInput !== "") {
+            searchForEvolution(name);
+            toggleOnExpandedChange(id);
+        } else {
+            toggleOnExpandedChange(id);
+        }
+    }
+
     const triangle = (expanded === id) ? 'pokemonOpenTriangle' : 'pokemonClosedTriangle';
     return (
         <div className="cardWrapper noselect">
-            <div onClick={() => toggleOnExpandedChange(index, id)} className='card'>
+            <div onClick={() => toggleOnExpandedChange(id)} className='card'>
                 {
                     !(expanded === id) &&
                     <img draggable="false" alt={`image ` + name} src={image} />
@@ -77,6 +86,32 @@ const Card = ({ index, id, name, image, types, height, weight, attacks, evolutio
                     </div>
                     <div>
                         <h3>Attacks</h3>
+                        <div className="attacksWrapper">
+                            <div>
+                                <p>FAST</p>
+                                {attacks.fast === null ?
+                                    <p className="noAttacksFoundText">No FAST Attacks found!</p> :
+                                    attacks.fast.map((attack, i) =>
+                                        attack.name !== null &&
+                                        <div key={i} className="fastAttack attackCard">
+                                            <p className="attackName">{attack.name}</p>
+                                            <p className="attackDamage">{attack.damage}</p>
+                                        </div>
+
+                                    )}
+                            </div>
+                            <div>
+                                <p>SPECIAL</p>
+                                {attacks.special === null ?
+                                    <p className="noAttacksFoundText">No FAST Attacks found!</p> :
+                                    attacks.special.map((attack, i) =>
+                                        <div key={i} className="specialAttack attackCard">
+                                            <p className="attackName">{attack.name}</p>
+                                            <p className="attackDamage">{attack.damage}</p>
+                                        </div>
+                                    )}
+                            </div>
+                        </div>
                     </div>
                     <div>
                         <h3>Evolutions</h3>
@@ -84,7 +119,7 @@ const Card = ({ index, id, name, image, types, height, weight, attacks, evolutio
                             <p className="noEvolutionFoundText">Final evolution</p> :
                             evolutions.map((evolution, i) =>
                                 <div key={i} className="evolutionsImageWrapper">
-                                    <img onClick={() => { onClearSearch(); toggleOnExpandedChange(evolution.id) }} style={evolutions.length > 2 ? { marginTop: 15, height: 55 } : {}} draggable="false" alt={`image ` + name} src={evolution.image} />
+                                    <img onClick={() => onEvolutionClick(evolution.id, evolution.name)} style={evolutions.length > 2 ? { marginTop: 15, height: 55 } : {}} draggable="false" alt={`image ` + name} src={evolution.image} />
                                     <p>{evolution.name}</p>
                                 </div>
                             )}

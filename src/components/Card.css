@@ -123,12 +123,11 @@
                                     supported by Chrome, Opera and Firefox */
   }
 
- 
 
   .cardDetails {
     margin-left: 70px;
     margin-right: 70px;
-    height: 383px;
+    /*height: 383px;*/
     background-color: #fff;
     z-index: 90;
     margin-top: -25px;
@@ -137,6 +136,7 @@
     border-bottom-right-radius: 28px;
     display: flex;
     flex-direction: row;
+    padding-bottom: 30px;
   }
 
   .cardDetails div {
@@ -204,12 +204,54 @@
         font-size: 17px;
         font-weight: bold;
     }
+
+    .attacksWrapper div{
+        margin-top: 30px;
+    }
+
+    .attacksWrapper p{
+        margin-block-start: 0;
+        margin-block-end: 0;
+        line-height: 20px;
+        font-size: 17px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .fastAttack {
+        background-color: #808080;
+    }
+
+    .specialAttack {
+        background-color: #404040;
+    }
+
+    .attackCard {
+        height: 25px;
+        width: 130px;
+        border-radius: 6px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px !important;
+        padding: 0 7px;
+    }
+    .attackCard p {
+        text-transform: unset;
+        color: white;
+        font-size: 11px;
+        line-height: 25px;
+    }
+    .attackCard .attackName {
+        float: left;
+    }
+    .attackCard .attackDamage {
+        float: right;
+    }
     
     .evolutionsImageWrapper img{
         height: 85px;
         z-index: 100;
     }
-    
+
     .evolutionsImageWrapper img:hover {
         cursor: pointer;
     }
@@ -221,7 +263,7 @@
     }
 
     .noEvolutionFoundText {
-        margin-top: 25px;
+        margin-top: 30px;
         font-size: 15px;
         text-transform: uppercase;
         text-align: center;

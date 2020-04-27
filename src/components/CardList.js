@@ -8,7 +8,7 @@ import graphql from 'babel-plugin-relay/macro';
 import environment from '../environment';
 import './CardList.css';
 
-import { setExpanded, setSearchField } from '../actions'
+import { setExpanded } from '../actions'
 
 const mapStateToProps = state => {
     return {
@@ -24,11 +24,13 @@ const mapDispatchToProps = (dispatch) => {
 
 
 
-const CardList = ({ searchBoxInput, setSearchChange, expanded, onExpandedChange, scrollToCard }) => {          //using people array as props
+const CardList = ({ searchBoxRef, searchBoxInput, setSearchChange, expanded, onExpandedChange }) => {          //using people array as props
 
-    const clearSearchInput = () => {
-        setSearchChange("");
+    const searchForEvolution = (name) => {
+        setSearchChange(name);
+        searchBoxRef.current.focus();
     }
+
 
     return (
         <QueryRenderer
@@ -58,6 +60,7 @@ const CardList = ({ searchBoxInput, setSearchChange, expanded, onExpandedChange,
                 const filteredPokemon = props.pokemons.filter(pokemon => {
                     return pokemon.name.toLowerCase().includes(searchBoxInput.toLowerCase());
                 });
+
                 return filteredPokemon.map((pokemon, i) => {
                     return (<Card
                         key={i}
@@ -72,8 +75,8 @@ const CardList = ({ searchBoxInput, setSearchChange, expanded, onExpandedChange,
                         evolutions={pokemon.evolutions}
                         expanded={expanded}
                         onExpandedChange={onExpandedChange}
-                        onClearSearch={clearSearchInput}
-                        scrollToCard={scrollToCard}
+                        searchBoxInput={searchBoxInput}
+                        searchForEvolution={searchForEvolution}
                     />)
                 })
             }}
