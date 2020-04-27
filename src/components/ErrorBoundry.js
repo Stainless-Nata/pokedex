@@ -14,7 +14,7 @@ class ErrorBoundry extends Component {
 
     render() {
         if (this.state.hasError) {      //if the error appeared, a proper error message will be displayed
-            return <h1>Ooops. That is not good</h1>
+            return <h3 style={{ width: "100%", textAlign: "center" }}>An error appeared - pls contact the owner of the page!</h3>
         }
         return this.props.children      //will render the cardlist component when no errors appeared
     }

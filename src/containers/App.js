@@ -7,7 +7,7 @@ import { setRoute, setSearchField } from '../actions'
 const mapStateToProps = state => {
     return {
         route: state.changeRoute.route,
-        searchField: state.searchPeople.searchField,            //prop searchfield will get the state of the searchPeople.searchField
+        searchField: state.searchPokemon.searchField,            //prop searchfield will get the state of the searchPeople.searchField
     }
 }
 

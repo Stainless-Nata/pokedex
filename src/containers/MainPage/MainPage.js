@@ -8,7 +8,7 @@ import {
 
 import CardList from '../../components/CardList';
 import SearchBox from '../../components/SearchBox';
-import Scroll from '../../components/Scroll';
+import Scroll from '../../components/Layout/Scroll/Scroll';
 import ErrorBoundry from '../../components/ErrorBoundry';
 import LoadingSpinner from '../../components/Layout/LoadingSpinner/LoadingSpinner';
 import TechnologyInfoButton from '../../components/Layout/TechnologyInfoButton/TechnologyInfoButton';

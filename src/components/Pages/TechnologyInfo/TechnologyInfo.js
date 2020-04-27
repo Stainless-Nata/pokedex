@@ -1,7 +1,7 @@
 import React from 'react'
 
 import './TechnologyInfo.css';
-import Scroll from '../../Scroll';
+import Scroll from '../../Layout/Scroll/Scroll';
 
 const TechnologyInfo = () => {
     return (

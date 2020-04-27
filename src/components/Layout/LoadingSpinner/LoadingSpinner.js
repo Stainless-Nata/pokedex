@@ -9,7 +9,7 @@ const LoadingSpinner = ({ swapiLabel }) => {
             <div className="circleLoading"></div>
             {
                 swapiLabel &&
-                <p className="morePeopleLoading">catching them all</p>
+                <p className="morePeopleLoading">catching 'em all</p>
             }
         </div>
     );

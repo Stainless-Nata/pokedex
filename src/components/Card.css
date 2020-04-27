@@ -22,7 +22,7 @@
 }
 
 .cardBorder {
-    border: 5px solid black;
+    border: 4px solid #606060;
     height: 142px;
     border-radius: 28px;
     position: absolute;

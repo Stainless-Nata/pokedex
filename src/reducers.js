@@ -50,7 +50,7 @@ const initialStateSearch = {
 
 //searchPeople function -> use default params (initialState, empty action object)
 //reducers get a input of a state and action -> if this one get something we care about (like searching people), we will do something
-export const searchPeople = (state = initialStateSearch, action = {}) => {
+export const searchPokemon = (state = initialStateSearch, action = {}) => {
     switch (action.type) {
         case CHANGE_SEARCH_FIELD:       //if a CHANGE_SEARCH_FIELD action comes in, we will do something
             return Object.assign({}, state, { searchField: action.payload })
