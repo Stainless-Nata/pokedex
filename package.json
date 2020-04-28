@@ -1,8 +1,8 @@
 {
   "name": "pokedex",
   "version": "1.0.0",
-  "private": true,
-  "homepage": "",
+  "private": false,
+  "homepage": "https://cscheffauer.github.io/pokedex/",
   "dependencies": {
     "gh-pages": "^2.2.0",
     "react": "^16.13.1",
