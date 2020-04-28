@@ -1,20 +1,20 @@
-# Star Wars Characters App
-![GitHub package.json version](https://img.shields.io/github/package-json/v/cscheffauer/starwars)
-![GitHub repo size](https://img.shields.io/github/repo-size/cscheffauer/starwars)
-![GitHub last commit](https://img.shields.io/github/last-commit/cscheffauer/starwars)
-![GitHub issues](https://img.shields.io/github/issues-raw/cscheffauer/starwars)
+# Pokedex App
+![GitHub package.json version](https://img.shields.io/github/package-json/v/cscheffauer/pokedex)
+![GitHub repo size](https://img.shields.io/github/repo-size/cscheffauer/pokedex)
+![GitHub last commit](https://img.shields.io/github/last-commit/cscheffauer/pokedex)
+![GitHub issues](https://img.shields.io/github/issues-raw/cscheffauer/pokedex)
 
-## [Demo](https://cscheffauer.github.io/starwars)
+## [Demo](https://cscheffauer.github.io/pokedex)
 
-This Star Wars Character App allows you to search for your favourite Star Wars Character.
+This Pokedex App allows you to search for your favourite Pokemon.
 
-  - See how characters will be loaded from the [swapi.co] API
-  - Search for your favourite character at the top
-  - Check out the used technologies and the disclaimer at the bottom
+  - See how the Pokemons will be catched
+  - Search for your favourite Pokemon at the top
+  - Check out the details of each Pokemon, like attacks and evolutions
 
 ## Coming up soon
 
-  - Progressive Web App abilities, like searching for characters offline
+  - Mobile responsiveness
   - More visual improvements to enhance the user experience
 
 
@@ -22,26 +22,28 @@ This Star Wars Character App allows you to search for your favourite Star Wars C
 
 ## Tech
 
-This Star Wars Characters App uses a number of open source projects to work properly:
+This Pokedex App uses a number of open source projects to work properly:
 
 * [React] - a JS library for building user interfaces!
 * [React.lazy] - to render React components dynamically
 * [Redux] - a predictable state container for JS apps
 * [Redux Thunk] - Redux middleware
-* [Tachyons] - to style much easier and faster
+* [React-Relay] - GraphQL Client (by Facebook)
+* [GraphQL] - new query language for an API
 
 
 
 ## Installation
 
-This website was built and tested with [Node.js](https://nodejs.org/) v13.5.0 and npm v6.13.4 
+This website was built and tested with [Yarn](https://yarnpkg.com/) v1.22.4 and npm v6.13.4 
 
 Install the dependencies and start.
 
 ```sh
-$ cd starwars
-$ npm install -d
-$ npm start
+$ cd pokedex
+$ yarn install
+$ yarn run relay
+$ yarn start
 ```
 
 ## Development
@@ -53,7 +55,7 @@ Fork it and add your own twists to it. Can't wait to see your ideas 🤓
 
 ## Todos
 
-Check out the open issues at the [projects tab](https://github.com/cscheffauer/starwars/projects) 📝
+Check out the open issues at the [projects tab](https://github.com/cscheffauer/pokedex/projects) 📝
 
 
 License
@@ -69,10 +71,11 @@ MIT
 
    [Tachyons]: <https://tachyons.io/>
    [swapi.co]: <https://swapi.co>
-   [git-repo-url]: <https://github.com/joemccann/dillinger.git>
    [Redux Thunk]: <https://github.com/reduxjs/redux-thunk>
    [React.lazy]: <https://reactjs.org/docs/code-splitting.html#reactlazy>
    [React]: <https://reactjs.org/>
    [Redux]: <https://redux.js.org/>
+   [GraphQL]: <https://graphql.org/>
+   [React-Relay]: <https://relay.dev/>
 
    

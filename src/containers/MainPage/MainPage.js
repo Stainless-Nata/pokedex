@@ -1,4 +1,4 @@
-import React, { Component, Suspense, lazy, Fragment } from 'react';   //destructuring (instead of React.Component)
+import React, { Component, Suspense, lazy } from 'react';   //destructuring (instead of React.Component)
 
 import {
     INITIAL_ROUTE,
@@ -41,7 +41,7 @@ class MainPage extends Component {   //class App will use the component lib / Co
 
         if (route === INITIAL_ROUTE) {
             return (
-                <Fragment>
+                <>
                     <SearchBox searchBoxRef={this.state.searchBoxRef} searchBoxInput={this.state.searchBoxInput} setSearchChange={this.setSearchChange} />
                     <Scroll scrollContainer={this.state.scrollContainer}>
                         <ErrorBoundry>
@@ -50,7 +50,7 @@ class MainPage extends Component {   //class App will use the component lib / Co
                             }
                         </ErrorBoundry>
                     </Scroll>
-                </Fragment>
+                </>
             )
         } else if (route === IMPRINT_ROUTE) {
             return (
