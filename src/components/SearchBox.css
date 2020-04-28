@@ -5,6 +5,7 @@
 }
 
 .searchBox {
+    -webkit-appearance: none;
     text-transform: uppercase;
     position: relative;
     top: 60px;

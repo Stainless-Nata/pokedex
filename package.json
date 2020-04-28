@@ -1,6 +1,6 @@
 {
-  "name": "starwars",
-  "version": "1.1.0",
+  "name": "pokedex",
+  "version": "1.0.0",
   "private": true,
   "homepage": "",
   "dependencies": {
@@ -13,8 +13,7 @@
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0",
-    "tachyons": "^4.11.1"
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "predeploy": "npm run build",
@@ -47,7 +46,7 @@
       "!**/vendor/**"
     ]
   },
-  "description": "This Star Wars Character App allows you to search for your favourite Star Wars Character.",
+  "description": "This Pokedex App allows you to search for your favourite Pokemon.",
   "main": "index.js",
   "author": "Christoph Scheffauer",
   "license": "ISC",

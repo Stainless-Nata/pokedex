@@ -10,7 +10,6 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import './index.css';
 import App from './containers/App';
 import * as serviceWorker from './serviceWorker';
-import 'tachyons';      //to use tachyons lib
 import { changeRoute, searchPokemon, changeExpanded } from './reducers';
 
 const logger = createLogger();
