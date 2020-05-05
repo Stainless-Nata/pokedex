@@ -40,7 +40,7 @@ const Card = ({ id, name, image, types, height, weight, attacks, evolutions, exp
                 </div>
                 <div className='pokemonTypeSection'>
                     <div className='pokemonTypeOverlay'>
-                        <div className='pokemonTypeOverlayBackground' style={{ backgroundImage: `url('/images/textures/${types[0]}.png')` }} />
+                        <div className='pokemonTypeOverlayBackground' style={{ backgroundImage: `url('images/textures/${types[0].toLowerCase()}.png')` }} />
                     </div>
 
                     {
@@ -71,7 +71,7 @@ const Card = ({ id, name, image, types, height, weight, attacks, evolutions, exp
                         </div>
                         <div className="factsHeightWrapper">
                             <div>
-                                <img draggable="false" alt="height_icon" src={`/images/facts/height.png`} />
+                                <img draggable="false" alt="height_icon" src={`images/facts/height.png`} />
                             </div>
                             <div>
                                 <p>Min: {height.minimum}</p>
@@ -81,7 +81,7 @@ const Card = ({ id, name, image, types, height, weight, attacks, evolutions, exp
                         </div>
                         <div className="factsWeightWrapper">
                             <div>
-                                <img draggable="false" alt="weight_icon" src={`/images/facts/weight.png`} />
+                                <img draggable="false" alt="weight_icon" src={`images/facts/weight.png`} />
                             </div>
                             <div>
                                 <p>Min: {weight.minimum}</p>
